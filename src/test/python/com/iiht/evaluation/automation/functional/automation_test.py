@@ -21,9 +21,9 @@ from root_path import get_project_root
 
 @pytest.fixture(scope="session")
 def driver(request):
-    req_root_path=get_project_root();
+    req_root_path = get_project_root();
     print(f"${req_root_path}")
-    req_chrome_driver_path=req_root_path+"/binaries/chromedriver.exe"
+    req_chrome_driver_path = req_root_path + "/binaries/chromedriver.exe"
     print(f"{req_chrome_driver_path}")
     baseUrl = "https://www.moneycontrol.com/"
     options = Options()
@@ -40,20 +40,22 @@ def driver(request):
     options.add_argument("--no-sandbox")
     options.add_argument("disable-popup-blocking")
 
-    options.set_capability("goog:loggingPrefs", {'driver': 'INFO','server': 'OFF','browser': 'INFO'})
+    options.set_capability("goog:loggingPrefs", {'driver': 'INFO', 'server': 'OFF', 'browser': 'INFO'})
     options.set_capability("elementScrollBehavior", 1)
     options.set_capability("acceptInsecureCerts", True)
     options.set_capability("javascriptEnabled", True)
     service = Service(req_chrome_driver_path)
-    driver = webdriver.Chrome(service=service,options=options)
+    driver = webdriver.Chrome(service=service, options=options)
     driver.implicitly_wait(15)
     driver.get(baseUrl)
+
     def teardown():
         # Quit chromedriver
         driver.quit()
 
     request.addfinalizer(teardown)
     return driver
+
 
 @pytest.fixture(autouse=True)
 def setup_teardown(driver):
@@ -159,6 +161,7 @@ def test_access_loan_period(driver):
         print(ex)
         # utils.yakshaAssert(utils.currentTest(), False, "Business")
 
+
 @pytest.mark.order(7)
 def test_set_value_for_loan_period(driver):
     utils = TestUtils()
@@ -170,7 +173,7 @@ def test_set_value_for_loan_period(driver):
         # utils.yakshaAssert(utils.currentTest(), False, "Business")
 
 
-@pytest.mark.order(9)
+@pytest.mark.order(8)
 def test_set_value_for_emi_start_from(driver):
     utils = TestUtils()
     try:
@@ -181,7 +184,7 @@ def test_set_value_for_emi_start_from(driver):
         # utils.yakshaAssert(utils.currentTest(), False, "Business")
 
 
-@pytest.mark.order(10)
+@pytest.mark.order(9)
 def test_access_interest_rate(driver):
     utils = TestUtils()
     master_data = MasterData()
@@ -195,7 +198,7 @@ def test_access_interest_rate(driver):
         # utils.yakshaAssert(utils.currentTest(), False, "Business")
 
 
-@pytest.mark.order(11)
+@pytest.mark.order(10)
 def test_set_value_for_interest_rate(driver):
     utils = TestUtils()
     try:
@@ -206,7 +209,7 @@ def test_set_value_for_interest_rate(driver):
         # utils.yakshaAssert(utils.currentTest(), False, "Business")
 
 
-@pytest.mark.order(12)
+@pytest.mark.order(11)
 def test_access_upfront_charges(driver):
     utils = TestUtils()
     master_data = MasterData()
@@ -221,7 +224,7 @@ def test_access_upfront_charges(driver):
         # utils.yakshaAssert(utils.currentTest(), False, "Business")
 
 
-@pytest.mark.order(13)
+@pytest.mark.order(12)
 def test_set_value_for_upfront_charges(driver):
     utils = TestUtils()
     status = False
@@ -233,7 +236,7 @@ def test_set_value_for_upfront_charges(driver):
         # utils.yakshaAssert(utils.currentTest(), False, "Business")
 
 
-@pytest.mark.order(14)
+@pytest.mark.order(13)
 def test_get_total_payment_element(driver):
     utils = TestUtils()
     try:
@@ -249,40 +252,41 @@ def test_get_total_payment_element(driver):
         # utils.yakshaAssert(utils.currentTest(), False, "Business")
 
 
-@pytest.mark.order(15)
+@pytest.mark.order(14)
 def test_get_xpath_for_7th_year_emi_payment(driver):
     utils = TestUtils()
     status = Helpers.getXpathfor7thYearEMIPayment().find("sibling")
     # utils.yakshaAssert(utils.currentTest(), status, "Business")
 
 
-@pytest.mark.order(16)
+@pytest.mark.order(15)
 def test_get_xpath_for_7th_year_interest_payment(driver):
     utils = TestUtils()
     status = Helpers.getXpathfor7thYearInterestPayment().find("sibling")
     # utils.yakshaAssert(utils.currentTest(), status, "Business")
 
 
-@pytest.mark.order(17)
+@pytest.mark.order(16)
 def test_get_xpath_for_7th_year_principal_payment(driver):
     utils = TestUtils()
     status = Helpers.getXpathfor7thYearPrincipalPayment().find("sibling")
     # utils.yakshaAssert(utils.currentTest(), status, "Business")
 
 
-@pytest.mark.order(18)
+@pytest.mark.order(17)
 def test_get_xpath_for_5th_year_outstanding_principal_payment(driver):
     utils = TestUtils()
     status = Helpers.getXpathfor5thYearOutstandingPrincipalPayment().find("sibling")
     # utils.yakshaAssert(utils.currentTest(), status, "Business")
 
 
-@pytest.mark.parametrize("test_input", ["test_mouse_over_personal_finance", "test_get_tool_for_emi_calculator","test_get_home_loan_emi_calculator",
-                                        "test_access_loan_amount","test_set_value_for_loan_amount"])
-def test_suite(driver, test_input):
-    # Your test code here
-    print(f"Running {test_input}")
-
-
-if __name__ == "__main__":
-    pytest.main([__file__])
+# @pytest.mark.parametrize("test_input", ["test_mouse_over_personal_finance", "test_get_tool_for_emi_calculator",
+#                                         "test_get_home_loan_emi_calculator",
+#                                         "test_access_loan_amount", "test_set_value_for_loan_amount"])
+# def test_suite(driver, test_input):
+#     # Your test code here
+#     print(f"Running {test_input}")
+#
+#
+# if __name__ == "__main__":
+#     pytest.main([__file__])

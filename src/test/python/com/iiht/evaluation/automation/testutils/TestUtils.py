@@ -1,19 +1,21 @@
-#from testutils.TestResults import TestResults
+# from testutils.TestResults import TestResults
 
-#from testutils.TestCaseResultDto import TestCaseResultDto
+# from testutils.TestCaseResultDto import TestCaseResultDto
 from src.test.python.com.iiht.evaluation.automation.testutils.TestResults import TestResults
 from src.test.python.com.iiht.evaluation.automation.testutils.TestCaseResultDto import TestCaseResultDto
 import json
 import requests
 import inspect
 
+
 class TestUtils:
     GUID = "dc66f3c1-630f-40ab-8314-f7bb9ffcb71f"
     URL = "https://yaksha-prod-sbfn.azurewebsites.net/api/YakshaMFAEnqueue?code=jSTWTxtQ8kZgQ5FC0oLgoSgZG7UoU9Asnmxgp6hLLvYId/GW9ccoLw=="
-    RED_BOLD_BRIGHT = "\033[1;91m" # RED
-    GREEN_BOLD_BRIGHT = "\033[1;92m" # GREEN
-    YELLOW_BOLD_BRIGHT = "\033[1;93m" # YELLOW
-    BLUE_BOLD_BRIGHT = "\033[1;94m" # BLUE
+    RED_BOLD_BRIGHT = "\033[1;91m"  # RED
+    GREEN_BOLD_BRIGHT = "\033[1;92m"  # GREEN
+    YELLOW_BOLD_BRIGHT = "\033[1;93m"  # YELLOW
+    BLUE_BOLD_BRIGHT = "\033[1;94m"  # BLUE
+
     @classmethod
     def yakshaAssert(self, test_name, result, test_type):
         ref = open("../custom.ih", "r")
@@ -35,16 +37,16 @@ class TestUtils:
         final_result = json.dumps(test_results)
 
         requests.post(self.URL, final_result)
-                
+
         print("\n" + self.BLUE_BOLD_BRIGHT + "=>", end="")
         print(self.BLUE_BOLD_BRIGHT + "Test For:", end="")
         print(self.BLUE_BOLD_BRIGHT + test_name, end="")
         print(":", end=" ")
         if result == True:
-            print(self.GREEN_BOLD_BRIGHT + "PASSED" )
+            print(self.GREEN_BOLD_BRIGHT + "PASSED")
         else:
-            print(self.RED_BOLD_BRIGHT + "FAILED" )
-            
+            print(self.RED_BOLD_BRIGHT + "FAILED")
+
     @staticmethod
     def currentTest():
-        return inspect.stack()[1][3]    
+        return inspect.stack()[1][3]
