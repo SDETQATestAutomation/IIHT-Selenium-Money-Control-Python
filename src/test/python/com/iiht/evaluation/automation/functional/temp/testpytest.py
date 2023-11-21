@@ -2,7 +2,7 @@ import pytest
 
 
 @pytest.mark.usefixtures('class_fixture')
-@pytest.mark.usefixtures('conf_setup')
+@pytest.mark.usefixtures('method_fixture')
 @pytest.mark.usefixtures('data')
 class TestDemo:
 

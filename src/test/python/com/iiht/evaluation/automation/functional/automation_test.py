@@ -8,6 +8,7 @@ import os
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
+from root_path import get_project_root
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
@@ -16,16 +17,16 @@ from src.main.pyhton.com.iiht.evaluation.automation import Helpers
 from src.main.pyhton.com.iiht.evaluation.automation import SubActivities
 from src.test.python.com.iiht.evaluation.automation.testutils.MasterData import MasterData
 from src.test.python.com.iiht.evaluation.automation.testutils.TestUtils import TestUtils
-from root_path import get_project_root
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture()
 def driver(request):
-    req_root_path = get_project_root();
+    print("\nBefore method setup")
+    req_root_path = get_project_root()
     print(f"${req_root_path}")
     req_chrome_driver_path = req_root_path + "/binaries/chromedriver.exe"
     print(f"{req_chrome_driver_path}")
-    baseUrl = "https://www.moneycontrol.com/"
+    base_url = "https://www.moneycontrol.com/"
     options = Options()
     options.add_argument("--ignore-ssl-errors=yes")
     options.add_argument("--ignore-certificate-errors")
@@ -47,24 +48,14 @@ def driver(request):
     service = Service(req_chrome_driver_path)
     driver = webdriver.Chrome(service=service, options=options)
     driver.implicitly_wait(15)
-    driver.get(baseUrl)
-
-    def teardown():
-        # Quit chromedriver
-        driver.quit()
-
-    request.addfinalizer(teardown)
-    return driver
-
-
-@pytest.fixture(autouse=True)
-def setup_teardown(driver):
-    # Executes before each test
-    # Add any setup steps here
+    driver.get(base_url)
     yield
-
-    # Executes after each test
-    # Add any teardown steps here
+    try:
+        print("\nAfter method setup")
+        pass
+    finally:
+        driver.quit()
+    return driver
 
 
 def get_href_of_link(driver):
@@ -74,7 +65,6 @@ def get_href_of_link(driver):
         return driver.get_attribute("outerHTML")
 
 
-@pytest.mark.order(1)
 def test_mouse_over_personal_finance(driver):
     utils = TestUtils()
     master_data = MasterData()
@@ -278,7 +268,6 @@ def test_get_xpath_for_5th_year_outstanding_principal_payment(driver):
     utils = TestUtils()
     status = Helpers.getXpathfor5thYearOutstandingPrincipalPayment().find("sibling")
     # utils.yakshaAssert(utils.currentTest(), status, "Business")
-
 
 # @pytest.mark.parametrize("test_input", ["test_mouse_over_personal_finance", "test_get_tool_for_emi_calculator",
 #                                         "test_get_home_loan_emi_calculator",
