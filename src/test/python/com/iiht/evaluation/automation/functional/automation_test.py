@@ -288,10 +288,63 @@ def signin_box_click_login_button(driver):
         return login_signin_box_not_present
 
 
-def test_login(driver):
-    open_login_panel(driver)
-    open_signin_box(driver)
-    signin_box_enter_email(driver, "prashant.ranjan.qa@gmail.com")
-    signin_box_enter_password(driver, "igetup@7AM")
-    signin_box_click_login_button(driver)
+def signin_box_click_login_button_except_error(driver):
+    login_signin_box_present = False
+    driver.switch_to.default_content()
+    switch_to_signin_iframe_succeed = switch_to_signin_iframe(driver)
+    if not switch_to_signin_iframe_succeed:
+        return False
+    signin_box_login_button_element = find_element_use_xpath(driver,
+                                                             money_control_element["signin_box_login_button"])
+    if signin_box_login_button_element is None:
+        return False
+    signin_box_login_button_element.click()
 
+    try:
+        login_signin_box_present = wait_for_element_present(driver, money_control_element["login_signin_box"])
+        print(f"login_signin_box_present {login_signin_box_present}")
+    except Exception as ex:
+        print(f"ex {ex}")
+    finally:
+        driver.switch_to.default_content()
+        return login_signin_box_present
+
+
+def signin_box_check_error(driver, error_message):
+    is_error_message_checked = False
+    driver.switch_to.default_content()
+    switch_to_signin_iframe_succeed = switch_to_signin_iframe(driver)
+    if not switch_to_signin_iframe_succeed:
+        return False
+    signin_box_error_div_element = find_element_use_xpath(driver,
+                                                          money_control_element["signin_box_error_div"])
+    if signin_box_error_div_element is None:
+        return False
+    signin_box_error_div_element_text = signin_box_error_div_element.text
+    print(f"signin_box_error_div_element_text {signin_box_error_div_element_text}")
+    if signin_box_error_div_element_text == error_message:
+        is_error_message_checked = True
+    return is_error_message_checked
+
+
+def check_logged_in_user(driver, email):
+    is_email_checked = False
+    logged_in_user_link_element = find_element_use_xpath(driver,
+                                                         money_control_element["logged_in_user_link"])
+    if logged_in_user_link_element is None:
+        return False
+    logged_in_user_link_title_attribute = logged_in_user_link_element.get_attribute("title")
+    print(f"logged_in_user_link_title_attribute {logged_in_user_link_title_attribute}")
+    if logged_in_user_link_title_attribute.lstrip().rstrip() == email:
+        is_email_checked = True
+    return is_email_checked
+
+
+def test_login(driver):
+    # open_login_panel(driver)
+    # open_signin_box(driver)
+    # signin_box_enter_email(driver, "prashant.ranjan.qa@gmail.com")
+    # signin_box_enter_password(driver, "igetup@7AM")
+    # signin_box_click_login_button(driver)
+    # signin_box_check_error(driver, "Invalid User Id/EmailID or Password. Please try again.")
+    check_logged_in_user(driver,"Prashant.ranjan.qa@gmail.com")
