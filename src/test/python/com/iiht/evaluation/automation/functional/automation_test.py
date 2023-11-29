@@ -595,6 +595,636 @@ def fixed_deposit_calculator_check_post_tax_amount(driver, post_tax_amount):
         return False
     return True
 
+def emergency_fund_calculator_enter_medical_dental_cost(driver,medical_dental_cost):
+    medical_dental_cost_input = money_control_element["medical_dental_cost_input"]
+    medical_dental_cost_input_element = find_element_use_xpath(driver, medical_dental_cost_input)
+    if medical_dental_cost_input_element is None:
+        return False
+    medical_dental_cost_input_element_visible = wait_for_element_visible(driver, medical_dental_cost_input)
+    print(f"medical_dental_cost_input_element_visible {medical_dental_cost_input_element_visible}")
+    if medical_dental_cost_input_element_visible is False:
+        return False
+    medical_dental_cost_input_element.clear()
+    medical_dental_cost_input_element.send_keys(medical_dental_cost)
+    return True
+
+def emergency_fund_calculator_check_medical_dental_cost(driver,medical_dental_cost):
+    medical_dental_cost_input = money_control_element["medical_dental_cost_input"]
+    medical_dental_cost_input_element = find_element_use_xpath(driver, medical_dental_cost_input)
+    if medical_dental_cost_input_element is None:
+        return False
+    medical_dental_cost_input_element_visible = wait_for_element_visible(driver, medical_dental_cost_input)
+    print(f"medical_dental_cost_input_element_visible {medical_dental_cost_input_element_visible}")
+    if medical_dental_cost_input_element_visible is False:
+        return False
+    medical_dental_cost_input_element_value_attribute = medical_dental_cost_input_element.get_attribute("value")
+    print(f"medical_dental_cost_input_element_value_attribute {medical_dental_cost_input_element_value_attribute}")
+    if medical_dental_cost_input_element_value_attribute != medical_dental_cost:
+        return False
+    return True
+
+def emergency_fund_calculator_enter_vehicle_repair(driver,vehicle_repair):
+    vehicle_repair_input = money_control_element["vehicle_repair_input"]
+    vehicle_repair_input_element = find_element_use_xpath(driver, vehicle_repair_input)
+    if vehicle_repair_input_element is None:
+        return False
+    vehicle_repair_input_element_visible = wait_for_element_visible(driver, vehicle_repair_input)
+    print(f"vehicle_repair_input_element_visible {vehicle_repair_input_element_visible}")
+    if vehicle_repair_input_element_visible is False:
+        return False
+    vehicle_repair_input_element.clear()
+    vehicle_repair_input_element.send_keys(vehicle_repair)
+    return True
+
+
+def emergency_fund_calculator_check_vehicle_repair(driver,vehicle_repair):
+    vehicle_repair_input = money_control_element["vehicle_repair_input"]
+    vehicle_repair_input_element = find_element_use_xpath(driver, vehicle_repair_input)
+    if vehicle_repair_input_element is None:
+        return False
+    vehicle_repair_input_element_visible = wait_for_element_visible(driver, vehicle_repair_input)
+    print(f"vehicle_repair_input_element_visible {vehicle_repair_input_element_visible}")
+    if vehicle_repair_input_element_visible is False:
+        return False
+    vehicle_repair_input_element_value_attribute = vehicle_repair_input_element.get_attribute("value")
+    print(f"vehicle_repair_input_element_value_attribute {vehicle_repair_input_element_value_attribute}")
+    if vehicle_repair_input_element_value_attribute != vehicle_repair:
+        return False
+    return True
+
+def emergency_fund_calculator_enter_others(driver,others):
+    others_input = money_control_element["others_input"]
+    others_input_element = find_element_use_xpath(driver, others_input)
+    if others_input_element is None:
+        return False
+    others_input_element_visible = wait_for_element_visible(driver, others_input)
+    print(f"others_input_element_visible {others_input_element_visible}")
+    if others_input_element_visible is False:
+        return False
+    others_input_element.clear()
+    others_input_element.send_keys(others)
+    return True
+
+def emergency_fund_calculator_check_others(driver,others):
+    others_input = money_control_element["others_input"]
+    others_input_element = find_element_use_xpath(driver, others_input)
+    if others_input_element is None:
+        return False
+    others_input_element_visible = wait_for_element_visible(driver, others_input)
+    print(f"others_input_element_visible {others_input_element_visible}")
+    if others_input_element_visible is False:
+        return False
+    others_input_element_value_attribute = others_input_element.get_attribute("value")
+    print(f"others_input_element_value_attribute {others_input_element_value_attribute}")
+    if others_input_element_value_attribute != others:
+        return False
+    return True
+
+def emergency_fund_calculator_enter_life_health_insurance_premium(driver,life_health_insurance_premium):
+    life_health_insurance_premium_input = money_control_element["life_health_insurance_premium_input"]
+    life_health_insurance_premium_input_element = find_element_use_xpath(driver, life_health_insurance_premium_input)
+    if life_health_insurance_premium_input_element is None:
+        return False
+    life_health_insurance_premium_input_element_visible = wait_for_element_visible(driver, life_health_insurance_premium_input)
+    print(f"life_health_insurance_premium_input_element_visible {life_health_insurance_premium_input_element_visible}")
+    if life_health_insurance_premium_input_element_visible is False:
+        return False
+    life_health_insurance_premium_input_element.clear()
+    life_health_insurance_premium_input_element.send_keys(life_health_insurance_premium)
+    return True
+
+def emergency_fund_calculator_check_life_health_insurance_premium(driver,life_health_insurance_premium):
+    life_health_insurance_premium_input = money_control_element["life_health_insurance_premium_input"]
+    life_health_insurance_premium_input_element = find_element_use_xpath(driver, life_health_insurance_premium_input)
+    if life_health_insurance_premium_input_element is None:
+        return False
+    life_health_insurance_premium_input_element_visible = wait_for_element_visible(driver, life_health_insurance_premium_input)
+    print(f"life_health_insurance_premium_input_element_visible {life_health_insurance_premium_input_element_visible}")
+    if life_health_insurance_premium_input_element_visible is False:
+        return False
+    life_health_insurance_premium_input_element_value_attribute = life_health_insurance_premium_input_element.get_attribute("value")
+    print(f"life_health_insurance_premium_input_element_value_attribute {life_health_insurance_premium_input_element_value_attribute}")
+    if life_health_insurance_premium_input_element_value_attribute != life_health_insurance_premium:
+        return False
+    return True
+
+def emergency_fund_calculator_enter_home_auto_insurance_premium(driver,home_auto_insurance_premium):
+    home_auto_insurance_premium_input = money_control_element["home_auto_insurance_premium_input"]
+    home_auto_insurance_premium_input_element = find_element_use_xpath(driver, home_auto_insurance_premium_input)
+    if home_auto_insurance_premium_input_element is None:
+        return False
+    home_auto_insurance_premium_input_element_visible = wait_for_element_visible(driver,
+                                                                                   home_auto_insurance_premium_input)
+    print(f"home_auto_insurance_premium_input_element_visible {home_auto_insurance_premium_input_element_visible}")
+    if home_auto_insurance_premium_input_element_visible is False:
+        return False
+    home_auto_insurance_premium_input_element.clear()
+    home_auto_insurance_premium_input_element.send_keys(home_auto_insurance_premium)
+    return True
+
+
+def emergency_fund_calculator_check_home_auto_insurance_premium(driver,home_auto_insurance_premium):
+    home_auto_insurance_premium_input = money_control_element["home_auto_insurance_premium_input"]
+    home_auto_insurance_premium_input_element = find_element_use_xpath(driver, home_auto_insurance_premium_input)
+    if home_auto_insurance_premium_input_element is None:
+        return False
+    home_auto_insurance_premium_input_element_visible = wait_for_element_visible(driver,
+                                                                                   home_auto_insurance_premium_input)
+    print(f"home_auto_insurance_premium_input_element_visible {home_auto_insurance_premium_input_element_visible}")
+    if home_auto_insurance_premium_input_element_visible is False:
+        return False
+    home_auto_insurance_premium_input_element_value_attribute = home_auto_insurance_premium_input_element.get_attribute(
+        "value")
+    print(
+        f"home_auto_insurance_premium_input_element_value_attribute {home_auto_insurance_premium_input_element_value_attribute}")
+    if home_auto_insurance_premium_input_element_value_attribute != home_auto_insurance_premium:
+        return False
+    return True
+
+def emergency_fund_calculator_enter_home_loan_other_important_emis(driver,home_loan_other_important_emis):
+    home_loan_other_important_emis_input = money_control_element["home_loan_other_important_emis_input"]
+    home_loan_other_important_emis_input_element = find_element_use_xpath(driver, home_loan_other_important_emis_input)
+    if home_loan_other_important_emis_input_element is None:
+        return False
+    home_loan_other_important_emis_input_element_visible = wait_for_element_visible(driver,
+                                                                                 home_loan_other_important_emis_input)
+    print(f"home_loan_other_important_emis_input_element_visible {home_loan_other_important_emis_input_element_visible}")
+    if home_loan_other_important_emis_input_element_visible is False:
+        return False
+    home_loan_other_important_emis_input_element.clear()
+    home_loan_other_important_emis_input_element.send_keys(home_loan_other_important_emis)
+    return True
+
+def emergency_fund_calculator_check_home_loan_other_important_emis(driver,home_loan_other_important_emis):
+    home_loan_other_important_emis_input = money_control_element["home_loan_other_important_emis_input"]
+    home_loan_other_important_emis_input_element = find_element_use_xpath(driver, home_loan_other_important_emis_input)
+    if home_loan_other_important_emis_input_element is None:
+        return False
+    home_loan_other_important_emis_input_element_visible = wait_for_element_visible(driver,
+                                                                                 home_loan_other_important_emis_input)
+    print(f"home_loan_other_important_emis_input_element_visible {home_loan_other_important_emis_input_element_visible}")
+    if home_loan_other_important_emis_input_element_visible is False:
+        return False
+    home_loan_other_important_emis_input_element_value_attribute = home_loan_other_important_emis_input_element.get_attribute(
+        "value")
+    print(
+        f"home_loan_other_important_emis_input_element_value_attribute {home_loan_other_important_emis_input_element_value_attribute}")
+    if home_loan_other_important_emis_input_element_value_attribute != home_loan_other_important_emis:
+        return False
+    return True
+
+
+def emergency_fund_calculator_enter_monthly_living_expenses(driver,monthly_living_expenses):
+    monthly_living_expenses_input = money_control_element["monthly_living_expenses_input"]
+    monthly_living_expenses_input_element = find_element_use_xpath(driver, monthly_living_expenses_input)
+    if monthly_living_expenses_input_element is None:
+        return False
+    monthly_living_expenses_input_element_visible = wait_for_element_visible(driver,
+                                                                             monthly_living_expenses_input)
+    print(f"monthly_living_expenses_input_element_visible {monthly_living_expenses_input_element_visible}")
+    if monthly_living_expenses_input_element_visible is False:
+        return False
+    monthly_living_expenses_input_element.clear()
+    monthly_living_expenses_input_element.send_keys(monthly_living_expenses)
+    return True
+
+def emergency_fund_calculator_check_monthly_living_expenses(driver,monthly_living_expenses):
+    monthly_living_expenses_input = money_control_element["monthly_living_expenses_input"]
+    monthly_living_expenses_input_element = find_element_use_xpath(driver, monthly_living_expenses_input)
+    if monthly_living_expenses_input_element is None:
+        return False
+    monthly_living_expenses_input_element_visible = wait_for_element_visible(driver,
+                                                                             monthly_living_expenses_input)
+    print(f"monthly_living_expenses_input_element_visible {monthly_living_expenses_input_element_visible}")
+    if monthly_living_expenses_input_element_visible is False:
+        return False
+    monthly_living_expenses_input_element_value_attribute = monthly_living_expenses_input_element.get_attribute(
+        "value")
+    print(
+        f"monthly_living_expenses_input_element_value_attribute {monthly_living_expenses_input_element_value_attribute}")
+    if monthly_living_expenses_input_element_value_attribute != monthly_living_expenses:
+        return False
+    return True
+
+def emergency_fund_calculator_enter_month_unemployed(driver,month_unemployed):
+    month_unemployed_input = money_control_element["month_unemployed_input"]
+    month_unemployed_input_element = find_element_use_xpath(driver, month_unemployed_input)
+    if month_unemployed_input_element is None:
+        return False
+    month_unemployed_input_element_visible = wait_for_element_visible(driver,
+                                                                             month_unemployed_input)
+    print(f"month_unemployed_input_element_visible {month_unemployed_input_element_visible}")
+    if month_unemployed_input_element_visible is False:
+        return False
+    month_unemployed_input_element.clear()
+    month_unemployed_input_element.send_keys(month_unemployed)
+    return True
+
+def emergency_fund_calculator_check_month_unemployed(driver,month_unemployed):
+    month_unemployed_input = money_control_element["month_unemployed_input"]
+    month_unemployed_input_element = find_element_use_xpath(driver, month_unemployed_input)
+    if month_unemployed_input_element is None:
+        return False
+    month_unemployed_input_element_visible = wait_for_element_visible(driver,
+                                                                             month_unemployed_input)
+    print(f"month_unemployed_input_element_visible {month_unemployed_input_element_visible}")
+    if month_unemployed_input_element_visible is False:
+        return False
+    month_unemployed_input_element_value_attribute = month_unemployed_input_element.get_attribute(
+        "value")
+    print(
+        f"month_unemployed_input_element_value_attribute {month_unemployed_input_element_value_attribute}")
+    if month_unemployed_input_element_value_attribute != month_unemployed:
+        return False
+    return True
+
+
+def emergency_fund_calculator_click_calculate_button(driver):
+    calculate_button = money_control_element["calculate_button"]
+    calculate_button_element = find_element_use_xpath(driver, calculate_button)
+    if calculate_button_element is None:
+        return False
+    calculate_button_element_visible = wait_for_element_visible(driver, calculate_button)
+    print(f"calculate_button_element_visible {calculate_button_element_visible}")
+    if calculate_button_element_visible is False:
+        return False
+    calculate_button_element.click()
+    return True
+
+
+def emergency_fund_calculator_check_uninsured_unexpected_emergencies_total(driver,uninsured_unexpected_emergencies_total):
+    uninsured_unexpected_emergencies_total_div = money_control_element["uninsured_unexpected_emergencies_total_div"]
+    uninsured_unexpected_emergencies_total_div_element = find_element_use_xpath(driver, uninsured_unexpected_emergencies_total_div)
+    if uninsured_unexpected_emergencies_total_div_element is None:
+        return False
+    uninsured_unexpected_emergencies_total_div_element_visible = wait_for_element_visible(driver, uninsured_unexpected_emergencies_total_div)
+    print(f"uninsured_unexpected_emergencies_total_div_element_visible {uninsured_unexpected_emergencies_total_div_element_visible}")
+    if uninsured_unexpected_emergencies_total_div_element_visible is False:
+        return False
+    uninsured_unexpected_emergencies_total_div_element_text = uninsured_unexpected_emergencies_total_div_element.text
+    print(f"uninsured_unexpected_emergencies_total_div_element_text {uninsured_unexpected_emergencies_total_div_element_text}")
+    if uninsured_unexpected_emergencies_total_div_element_text != uninsured_unexpected_emergencies_total:
+        return False
+    return True
+
+def emergency_fund_calculator_check_annual_amount_of_fixed_payments_total(driver,annual_amount_of_fixed_payments_total):
+    annual_amount_of_fixed_payments_total_div = money_control_element["annual_amount_of_fixed_payments_total_div"]
+    annual_amount_of_fixed_payments_total_div_element = find_element_use_xpath(driver,
+                                                                                annual_amount_of_fixed_payments_total_div)
+    if annual_amount_of_fixed_payments_total_div_element is None:
+        return False
+    annual_amount_of_fixed_payments_total_div_element_visible = wait_for_element_visible(driver,
+                                                                                          annual_amount_of_fixed_payments_total_div)
+    print(
+        f"annual_amount_of_fixed_payments_total_div_element_visible {annual_amount_of_fixed_payments_total_div_element_visible}")
+    if annual_amount_of_fixed_payments_total_div_element_visible is False:
+        return False
+    annual_amount_of_fixed_payments_total_div_element_text = annual_amount_of_fixed_payments_total_div_element.text
+    print(
+        f"annual_amount_of_fixed_payments_total_div_element_text {annual_amount_of_fixed_payments_total_div_element_text}")
+    if annual_amount_of_fixed_payments_total_div_element_text != annual_amount_of_fixed_payments_total:
+        return False
+    return True
+
+def emergency_fund_calculator_check_build_reserve_to_pay_for_job_loss(driver,build_reserve_to_pay_for_job_loss):
+    build_reserve_to_pay_for_job_loss_div = money_control_element["build_reserve_to_pay_for_job_loss_div"]
+    build_reserve_to_pay_for_job_loss_div_element = find_element_use_xpath(driver,
+                                                                               build_reserve_to_pay_for_job_loss_div)
+    if build_reserve_to_pay_for_job_loss_div_element is None:
+        return False
+    build_reserve_to_pay_for_job_loss_div_element_visible = wait_for_element_visible(driver,
+                                                                                         build_reserve_to_pay_for_job_loss_div)
+    print(
+        f"build_reserve_to_pay_for_job_loss_div_element_visible {build_reserve_to_pay_for_job_loss_div_element_visible}")
+    if build_reserve_to_pay_for_job_loss_div_element_visible is False:
+        return False
+    build_reserve_to_pay_for_job_loss_div_element_text = build_reserve_to_pay_for_job_loss_div_element.text
+    print(
+        f"build_reserve_to_pay_for_job_loss_div_element_text {build_reserve_to_pay_for_job_loss_div_element_text}")
+    if build_reserve_to_pay_for_job_loss_div_element_text != build_reserve_to_pay_for_job_loss:
+        return False
+    return True
+
+def emergency_fund_calculator_check_result(driver,result):
+    emergency_fund_calculator_result_div = money_control_element["emergency_fund_calculator_result_div"]
+    emergency_fund_calculator_result_div_element = find_element_use_xpath(driver,
+                                                                       emergency_fund_calculator_result_div)
+    if emergency_fund_calculator_result_div_element is None:
+        return False
+    emergency_fund_calculator_result_div_element_visible = wait_for_element_visible(driver,
+                                                                                 emergency_fund_calculator_result_div)
+    print(
+        f"emergency_fund_calculator_result_div_element_visible {emergency_fund_calculator_result_div_element_visible}")
+    if emergency_fund_calculator_result_div_element_visible is False:
+        return False
+    emergency_fund_calculator_result_div_element_text = emergency_fund_calculator_result_div_element.text
+    print(
+        f"emergency_fund_calculator_result_div_element_text {emergency_fund_calculator_result_div_element_text}")
+
+    if result not in emergency_fund_calculator_result_div_element_text:
+        return False
+    return True
+
+def provident_fund_calculator_enter_your_age(driver,your_age):
+    your_age_input = money_control_element["your_age_input"]
+    your_age_input_element = find_element_use_xpath(driver, your_age_input)
+    if your_age_input_element is None:
+        return False
+    your_age_input_element_visible = wait_for_element_visible(driver, your_age_input)
+    print(f"your_age_input_element_visible {your_age_input_element_visible}")
+    if your_age_input_element_visible is False:
+        return False
+    your_age_input_element.clear()
+    your_age_input_element.send_keys(your_age)
+    return True
+
+def provident_fund_calculator_check_your_age(driver,your_age):
+    your_age_input = money_control_element["your_age_input"]
+    your_age_input_element = find_element_use_xpath(driver, your_age_input)
+    if your_age_input_element is None:
+        return False
+    your_age_input_element_visible = wait_for_element_visible(driver, your_age_input)
+    print(f"your_age_input_element_visible {your_age_input_element_visible}")
+    if your_age_input_element_visible is False:
+        return False
+    your_age_input_element_value_attribute = your_age_input_element.get_attribute("value")
+    print(f"your_age_input_element_value_attribute {your_age_input_element_value_attribute}")
+    if your_age_input_element_value_attribute != your_age:
+        return False
+    return True
+
+def provident_fund_calculator_enter_your_basic_salary_monthly(driver,your_basic_salary_monthly):
+    your_basic_salary_monthly_input = money_control_element["your_basic_salary_monthly_input"]
+    your_basic_salary_monthly_input_element = find_element_use_xpath(driver, your_basic_salary_monthly_input)
+    if your_basic_salary_monthly_input_element is None:
+        return False
+    your_basic_salary_monthly_input_element_visible = wait_for_element_visible(driver, your_basic_salary_monthly_input)
+    print(f"your_basic_salary_monthly_input_element_visible {your_basic_salary_monthly_input_element_visible}")
+    if your_basic_salary_monthly_input_element_visible is False:
+        return False
+    your_basic_salary_monthly_input_element.clear()
+    your_basic_salary_monthly_input_element.send_keys(your_basic_salary_monthly)
+    return True
+
+def provident_fund_calculator_check_your_basic_salary_monthly(driver,your_basic_salary_monthly):
+    your_basic_salary_monthly_input = money_control_element["your_basic_salary_monthly_input"]
+    your_basic_salary_monthly_input_element = find_element_use_xpath(driver, your_basic_salary_monthly_input)
+    if your_basic_salary_monthly_input_element is None:
+        return False
+    your_basic_salary_monthly_input_element_visible = wait_for_element_visible(driver, your_basic_salary_monthly_input)
+    print(f"your_basic_salary_monthly_input_element_visible {your_basic_salary_monthly_input_element_visible}")
+    if your_basic_salary_monthly_input_element_visible is False:
+        return False
+    your_basic_salary_monthly_input_element_value_attribute = your_basic_salary_monthly_input_element.get_attribute("value")
+    print(f"your_basic_salary_monthly_input_element_value_attribute {your_basic_salary_monthly_input_element_value_attribute}")
+    if your_basic_salary_monthly_input_element_value_attribute != your_basic_salary_monthly:
+        return False
+    return True
+
+def provident_fund_calculator_enter_your_contribution_to_epf(driver,your_contribution_to_epf):
+    your_contribution_to_epf_input = money_control_element["your_contribution_to_epf_input"]
+    your_contribution_to_epf_input_element = find_element_use_xpath(driver, your_contribution_to_epf_input)
+    if your_contribution_to_epf_input_element is None:
+        return False
+    your_contribution_to_epf_input_element_visible = wait_for_element_visible(driver, your_contribution_to_epf_input)
+    print(f"your_contribution_to_epf_input_element_visible {your_contribution_to_epf_input_element_visible}")
+    if your_contribution_to_epf_input_element_visible is False:
+        return False
+    your_contribution_to_epf_input_element.clear()
+    your_contribution_to_epf_input_element.send_keys(your_contribution_to_epf)
+    return True
+
+def provident_fund_calculator_check_your_contribution_to_epf(driver,your_contribution_to_epf):
+    your_contribution_to_epf_input = money_control_element["your_contribution_to_epf_input"]
+    your_contribution_to_epf_input_element = find_element_use_xpath(driver, your_contribution_to_epf_input)
+    if your_contribution_to_epf_input_element is None:
+        return False
+    your_contribution_to_epf_input_element_visible = wait_for_element_visible(driver, your_contribution_to_epf_input)
+    print(f"your_contribution_to_epf_input_element_visible {your_contribution_to_epf_input_element_visible}")
+    if your_contribution_to_epf_input_element_visible is False:
+        return False
+    your_contribution_to_epf_input_element_value_attribute = your_contribution_to_epf_input_element.get_attribute(
+        "value")
+    print(
+        f"your_contribution_to_epf_input_element_value_attribute {your_contribution_to_epf_input_element_value_attribute}")
+    if your_contribution_to_epf_input_element_value_attribute != your_contribution_to_epf:
+        return False
+    return True
+
+def provident_fund_calculator_enter_your_employer_contribution_to_epf(driver,your_employer_contribution_to_epf):
+    your_employer_contribution_to_epf_input = money_control_element["your_employer_contribution_to_epf_input"]
+    your_employer_contribution_to_epf_input_element = find_element_use_xpath(driver, your_employer_contribution_to_epf_input)
+    if your_employer_contribution_to_epf_input_element is None:
+        return False
+    your_employer_contribution_to_epf_input_element_visible = wait_for_element_visible(driver, your_employer_contribution_to_epf_input)
+    print(f"your_employer_contribution_to_epf_input_element_visible {your_employer_contribution_to_epf_input_element_visible}")
+    if your_employer_contribution_to_epf_input_element_visible is False:
+        return False
+    your_employer_contribution_to_epf_input_element.clear()
+    your_employer_contribution_to_epf_input_element.send_keys(your_employer_contribution_to_epf)
+    return True
+
+def provident_fund_calculator_check_your_employer_contribution_to_epf(driver,your_employer_contribution_to_epf):
+    your_employer_contribution_to_epf_input = money_control_element["your_employer_contribution_to_epf_input"]
+    your_employer_contribution_to_epf_input_element = find_element_use_xpath(driver, your_employer_contribution_to_epf_input)
+    if your_employer_contribution_to_epf_input_element is None:
+        return False
+    your_employer_contribution_to_epf_input_element_visible = wait_for_element_visible(driver, your_employer_contribution_to_epf_input)
+    print(f"your_employer_contribution_to_epf_input_element_visible {your_employer_contribution_to_epf_input_element_visible}")
+    if your_employer_contribution_to_epf_input_element_visible is False:
+        return False
+    your_employer_contribution_to_epf_input_element_value_attribute = your_employer_contribution_to_epf_input_element.get_attribute(
+        "value")
+    print(
+        f"your_employer_contribution_to_epf_input_element_value_attribute {your_employer_contribution_to_epf_input_element_value_attribute}")
+    if your_employer_contribution_to_epf_input_element_value_attribute != your_employer_contribution_to_epf:
+        return False
+    return True
+
+def provident_fund_calculator_enter_average_annual_increase_in_salary_you_expect(driver,average_annual_increase_in_salary_you_expect):
+    average_annual_increase_in_salary_you_expect_input = money_control_element["average_annual_increase_in_salary_you_expect_input"]
+    average_annual_increase_in_salary_you_expect_input_element = find_element_use_xpath(driver,
+                                                                             average_annual_increase_in_salary_you_expect_input)
+    if average_annual_increase_in_salary_you_expect_input_element is None:
+        return False
+    average_annual_increase_in_salary_you_expect_input_element_visible = wait_for_element_visible(driver,
+                                                                                       average_annual_increase_in_salary_you_expect_input)
+    print(
+        f"average_annual_increase_in_salary_you_expect_input_element_visible {average_annual_increase_in_salary_you_expect_input_element_visible}")
+    if average_annual_increase_in_salary_you_expect_input_element_visible is False:
+        return False
+    average_annual_increase_in_salary_you_expect_input_element.clear()
+    average_annual_increase_in_salary_you_expect_input_element.send_keys(average_annual_increase_in_salary_you_expect)
+    return True
+
+def provident_fund_calculator_check_average_annual_increase_in_salary_you_expect(driver,average_annual_increase_in_salary_you_expect):
+    average_annual_increase_in_salary_you_expect_input = money_control_element["average_annual_increase_in_salary_you_expect_input"]
+    average_annual_increase_in_salary_you_expect_input_element = find_element_use_xpath(driver,
+                                                                             average_annual_increase_in_salary_you_expect_input)
+    if average_annual_increase_in_salary_you_expect_input_element is None:
+        return False
+    average_annual_increase_in_salary_you_expect_input_element_visible = wait_for_element_visible(driver,
+                                                                                       average_annual_increase_in_salary_you_expect_input)
+    print(
+        f"average_annual_increase_in_salary_you_expect_input_element_visible {average_annual_increase_in_salary_you_expect_input_element_visible}")
+    if average_annual_increase_in_salary_you_expect_input_element_visible is False:
+        return False
+    average_annual_increase_in_salary_you_expect_input_element_value_attribute = average_annual_increase_in_salary_you_expect_input_element.get_attribute(
+        "value")
+    print(
+        f"average_annual_increase_in_salary_you_expect_input_element_value_attribute {average_annual_increase_in_salary_you_expect_input_element_value_attribute}")
+    if average_annual_increase_in_salary_you_expect_input_element_value_attribute != average_annual_increase_in_salary_you_expect:
+        return False
+    return True
+
+def provident_fund_calculator_enter_age_when_you_intend_to_retire(driver,age_when_you_intend_to_retire):
+    age_when_you_intend_to_retire_input = money_control_element[
+        "age_when_you_intend_to_retire_input"]
+    age_when_you_intend_to_retire_input_element = find_element_use_xpath(driver,
+                                                                                        age_when_you_intend_to_retire_input)
+    if age_when_you_intend_to_retire_input_element is None:
+        return False
+    age_when_you_intend_to_retire_input_element_visible = wait_for_element_visible(driver,
+                                                                                                  age_when_you_intend_to_retire_input)
+    print(
+        f"age_when_you_intend_to_retire_input_element_visible {age_when_you_intend_to_retire_input_element_visible}")
+    if age_when_you_intend_to_retire_input_element_visible is False:
+        return False
+    age_when_you_intend_to_retire_input_element.clear()
+    age_when_you_intend_to_retire_input_element.send_keys(age_when_you_intend_to_retire)
+    return True
+
+def provident_fund_calculator_check_age_when_you_intend_to_retire(driver,age_when_you_intend_to_retire):
+    age_when_you_intend_to_retire_input = money_control_element[
+        "age_when_you_intend_to_retire_input"]
+    age_when_you_intend_to_retire_input_element = find_element_use_xpath(driver,
+                                                                                        age_when_you_intend_to_retire_input)
+    if age_when_you_intend_to_retire_input_element is None:
+        return False
+    age_when_you_intend_to_retire_input_element_visible = wait_for_element_visible(driver,
+                                                                                                  age_when_you_intend_to_retire_input)
+    print(
+        f"age_when_you_intend_to_retire_input_element_visible {age_when_you_intend_to_retire_input_element_visible}")
+    if age_when_you_intend_to_retire_input_element_visible is False:
+        return False
+    age_when_you_intend_to_retire_input_element_value_attribute = age_when_you_intend_to_retire_input_element.get_attribute(
+        "value")
+    print(
+        f"age_when_you_intend_to_retire_input_element_value_attribute {age_when_you_intend_to_retire_input_element_value_attribute}")
+    if age_when_you_intend_to_retire_input_element_value_attribute != age_when_you_intend_to_retire:
+        return False
+    return True
+
+def provident_fund_calculator_enter_current_epf_balance_if_any(driver,current_epf_balance_if_any):
+    current_epf_balance_if_any_input = money_control_element[
+        "current_epf_balance_if_any_input"]
+    current_epf_balance_if_any_input_element = find_element_use_xpath(driver,
+                                                                         current_epf_balance_if_any_input)
+    if current_epf_balance_if_any_input_element is None:
+        return False
+    current_epf_balance_if_any_input_element_visible = wait_for_element_visible(driver,
+                                                                                   current_epf_balance_if_any_input)
+    print(
+        f"current_epf_balance_if_any_input_element_visible {current_epf_balance_if_any_input_element_visible}")
+    if current_epf_balance_if_any_input_element_visible is False:
+        return False
+    current_epf_balance_if_any_input_element.clear()
+    current_epf_balance_if_any_input_element.send_keys(current_epf_balance_if_any)
+    return True
+
+def provident_fund_calculator_check_current_epf_balance_if_any(driver,current_epf_balance_if_any):
+    current_epf_balance_if_any_input = money_control_element[
+        "current_epf_balance_if_any_input"]
+    current_epf_balance_if_any_input_element = find_element_use_xpath(driver,
+                                                                         current_epf_balance_if_any_input)
+    if current_epf_balance_if_any_input_element is None:
+        return False
+    current_epf_balance_if_any_input_element_visible = wait_for_element_visible(driver,
+                                                                                   current_epf_balance_if_any_input)
+    print(
+        f"current_epf_balance_if_any_input_element_visible {current_epf_balance_if_any_input_element_visible}")
+    if current_epf_balance_if_any_input_element_visible is False:
+        return False
+    current_epf_balance_if_any_input_element_value_attribute = current_epf_balance_if_any_input_element.get_attribute(
+        "value")
+    print(
+        f"current_epf_balance_if_any_input_element_value_attribute {current_epf_balance_if_any_input_element_value_attribute}")
+    if current_epf_balance_if_any_input_element_value_attribute != current_epf_balance_if_any:
+        return False
+    return True
+
+def provident_fund_calculator_enter_current_interest_rate(driver,current_interest_rate):
+    current_interest_rate_input = money_control_element[
+        "current_interest_rate_input"]
+    current_interest_rate_input_element = find_element_use_xpath(driver,
+                                                                      current_interest_rate_input)
+    if current_interest_rate_input_element is None:
+        return False
+    current_interest_rate_input_element_visible = wait_for_element_visible(driver,
+                                                                                current_interest_rate_input)
+    print(
+        f"current_interest_rate_input_element_visible {current_interest_rate_input_element_visible}")
+    if current_interest_rate_input_element_visible is False:
+        return False
+    current_interest_rate_input_element.clear()
+    current_interest_rate_input_element.send_keys(current_interest_rate)
+    return True
+
+def provident_fund_calculator_check_current_interest_rate(driver,current_interest_rate):
+    current_interest_rate_input = money_control_element[
+        "current_interest_rate_input"]
+    current_interest_rate_input_element = find_element_use_xpath(driver,
+                                                                      current_interest_rate_input)
+    if current_interest_rate_input_element is None:
+        return False
+    current_interest_rate_input_element_visible = wait_for_element_visible(driver,
+                                                                                current_interest_rate_input)
+    print(
+        f"current_interest_rate_input_element_visible {current_interest_rate_input_element_visible}")
+    if current_interest_rate_input_element_visible is False:
+        return False
+    current_interest_rate_input_element_value_attribute = current_interest_rate_input_element.get_attribute(
+        "value")
+    print(
+        f"current_interest_rate_input_element_value_attribute {current_interest_rate_input_element_value_attribute}")
+    if current_interest_rate_input_element_value_attribute != current_interest_rate:
+        return False
+    return True
+
+def provident_fund_calculator_click_submit_button(driver):
+    pf_calculator_calculate_button = money_control_element["pf_calculator_calculate_button"]
+    pf_calculator_calculate_button_element = find_element_use_xpath(driver, pf_calculator_calculate_button)
+    if pf_calculator_calculate_button_element is None:
+        return False
+    pf_calculator_calculate_button_element_visible = wait_for_element_visible(driver, pf_calculator_calculate_button)
+    print(f"pf_calculator_calculate_button_element_visible {pf_calculator_calculate_button_element_visible}")
+    if pf_calculator_calculate_button_element_visible is False:
+        return False
+    pf_calculator_calculate_button_element.click()
+    return True
+
+def provident_fund_calculator_check_result(driver,result):
+    pf_cal_result_div = money_control_element["pf_cal_result_div"]
+    pf_cal_result_div_element = find_element_use_xpath(driver,
+                                                                       pf_cal_result_div)
+    if pf_cal_result_div_element is None:
+        return False
+    pf_cal_result_div_element_visible = wait_for_element_visible(driver,
+                                                                                 pf_cal_result_div)
+    print(
+        f"pf_cal_result_div_element_visible {pf_cal_result_div_element_visible}")
+    if pf_cal_result_div_element_visible is False:
+        return False
+    pf_cal_result_div_element_text = pf_cal_result_div_element.text
+    print(
+        f"pf_cal_result_div_element_text {pf_cal_result_div_element_text}")
+
+    if result not in pf_cal_result_div_element_text:
+        return False
+    return True
+
+
+
 
 def test_login(driver):
     # open_login_panel(driver)
