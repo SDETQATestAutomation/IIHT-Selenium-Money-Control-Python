@@ -1,7 +1,6 @@
 import pytest
 
 
-
 @pytest.fixture(scope="class")
 def class_fixture():
     print("\nBefore class setup")
@@ -9,10 +8,10 @@ def class_fixture():
     print("\nAfter class setup")
 
 
-
 @pytest.fixture()
 def data():
     return ['data1', 'data2', 'data3']
+
 
 @pytest.fixture(params=[
     {'user': 'user1', 'pass': 'pass1'},

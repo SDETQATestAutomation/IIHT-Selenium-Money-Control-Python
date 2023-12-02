@@ -58,7 +58,13 @@ money_control_element = {
     "current_epf_balance_if_any_input": "//input[@name='current_epf_balance']",
     "current_interest_rate_input": "//input[@name='current_interest_rate']",
     "pf_calculator_calculate_button": "//img[contains(@src,'calculate')]/parent::a",
-    "pf_cal_result_div": "//div[@id='result_epf']"
+    "pf_cal_result_div": "//div[@id='result_epf']",
+
+    "total_debt_outstanding_input": "//input[@name='total_debt_outstanding']",
+    "rate_of_interest_per_annum_input": "//input[@name='rate_of_interest']",
+    "how_much_can_you_repay_every_month_input": "//input[@name='repay_every_month']",
+    "debt_reduction_plan_calculator_calculate_button": "//img[contains(@src,'calculate')]",
+    "debt_reduction_plan_calculator_result_div": "//div[@id='result']",
 
 
 
