@@ -170,7 +170,7 @@ class Activities:
             return False
         logged_in_user_link_title_attribute = logged_in_user_link_element.get_attribute("title")
         print(f"logged_in_user_link_title_attribute {logged_in_user_link_title_attribute}")
-        if logged_in_user_link_title_attribute.lstrip().rstrip() == email:
+        if logged_in_user_link_title_attribute.lstrip().rstrip().lower() == email:
             is_email_checked = True
         return is_email_checked
 

@@ -65,26 +65,42 @@ def driver(request):
     return driver
 
 
-def test_login(driver):
-    Activities.open_login_panel(driver)
-    Activities.open_signin_box(driver)
-    Activities.signin_box_enter_email(driver, "prashant.ranjan.qa@gmail.com")
-    Activities.signin_box_enter_password(driver, "igetup@7AM")
-    Activities.signin_box_click_login_button(driver)
-    Activities.check_logged_in_user(driver, "Prashant.ranjan.qa@gmail.com")
-    # Activities.signin_box_check_error(driver, "Invalid User Id/EmailID or Password. Please try again.")
-# select_submenu_from_menu(driver, "Personal Finance", "Fixed Deposit Interest Calculator")
-# fixed_deposit_calculator_enter_investment_amount(driver, 300000)
-# fixed_deposit_calculator_enter_investment_period(driver, 5)
-# fixed_deposit_calculator_enter_rate_of_return(driver, 12)
-# fixed_deposit_calculator_select_interest_frequency(driver, "Monthly")
-# fixed_deposit_calculator_enter_tax_rate(driver, 15)
-# fixed_deposit_calculator_click_submit_button(driver)
-# fixed_deposit_calculator_check_total_payment(driver, "300,000.00")
-# fixed_deposit_calculator_check_total_interest(driver, "245,009.01")
-# fixed_deposit_calculator_check_total_corpus(driver, "545,009.01")
-# fixed_deposit_calculator_check_post_tax_amount(driver, "506,787.60")
-# fixed_deposit_calculator_check_investment_amount(driver,"10000000")
-# fixed_deposit_calculator_check_investment_period(driver,"10")
-# fixed_deposit_calculator_check_rate_of_return(driver,"10")
-# fixed_deposit_calculator_check_tax_rate(driver,"15")
+def test_success_login(driver, email="prashant.ranjan.qa@gmail.com", password="igetup@7AM"):
+    testcase_status = True
+    try:
+        open_login_panel_succeed = Activities.open_login_panel(driver)
+        print(f"open_login_panel_succeed {open_login_panel_succeed}")
+        if not open_login_panel_succeed:
+            testcase_status = False
+        if testcase_status:
+            open_signin_box_succeed = Activities.open_signin_box(driver)
+            print(f"open_signin_box_succeed {open_signin_box_succeed}")
+            if not open_signin_box_succeed:
+                testcase_status = False
+        if testcase_status:
+            signin_box_enter_email_succeed = Activities.signin_box_enter_email(driver, email)
+            print(f"signin_box_enter_email_succeed {signin_box_enter_email_succeed}")
+            if not signin_box_enter_email_succeed:
+                testcase_status = False
+        if testcase_status:
+            signin_box_enter_password_succeed = Activities.signin_box_enter_password(driver, password)
+            print(f"signin_box_enter_password_succeed {signin_box_enter_password_succeed}")
+            if not signin_box_enter_password_succeed:
+                testcase_status = False
+        if testcase_status:
+            signin_box_click_login_button_succeed = Activities.signin_box_click_login_button(driver)
+            print(f"signin_box_click_login_button_succeed {signin_box_click_login_button_succeed}")
+            if not signin_box_click_login_button_succeed:
+                testcase_status = False
+        if testcase_status:
+            check_logged_in_user_succeed = Activities.check_logged_in_user(driver, email)
+            print(f"check_logged_in_user_succeed {check_logged_in_user_succeed}")
+            if not check_logged_in_user_succeed:
+                testcase_status = False
+        print(f"testcase_status {testcase_status}")
+
+    except Exception as ex:
+        print(ex)
+
+
+
