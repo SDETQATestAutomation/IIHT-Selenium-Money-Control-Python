@@ -304,7 +304,7 @@ class Activities:
         SubActivities.do_javascript_click(driver, interest_frequency_radio_element)
         interest_frequency_radio_checked_attribute = interest_frequency_radio_element.get_attribute("checked")
         print(f"interest_frequency_radio_checked_attribute {interest_frequency_radio_checked_attribute}")
-        if interest_frequency_radio_checked_attribute != "checked":
+        if interest_frequency_radio_checked_attribute != "true":
             return False
         return True
 

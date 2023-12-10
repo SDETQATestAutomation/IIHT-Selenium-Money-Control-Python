@@ -103,7 +103,8 @@ def test_success_login(driver, email="prashant.ranjan.qa@gmail.com", password="i
         print(ex)
 
 
-def test_failure_login(driver, email="prashant.ranjan.qa@gmail.commmmm", password="igetup@7AMmmmmmm",error_message="Invalid User Id/EmailID or Password. Please try again."):
+def test_failure_login(driver, email="prashant.ranjan.qa@gmail.commmmm", password="igetup@7AMmmmmmm",
+                       error_message="Invalid User Id/EmailID or Password. Please try again."):
     testcase_status = True
     try:
         open_login_panel_succeed = Activities.open_login_panel(driver)
@@ -126,14 +127,455 @@ def test_failure_login(driver, email="prashant.ranjan.qa@gmail.commmmm", passwor
             if not signin_box_enter_password_succeed:
                 testcase_status = False
         if testcase_status:
-            signin_box_click_login_button_except_error_succeed = Activities.signin_box_click_login_button_except_error(driver)
-            print(f"signin_box_click_login_button_except_error_succeed {signin_box_click_login_button_except_error_succeed}")
+            signin_box_click_login_button_except_error_succeed = Activities.signin_box_click_login_button_except_error(
+                driver)
+            print(
+                f"signin_box_click_login_button_except_error_succeed {signin_box_click_login_button_except_error_succeed}")
             if not signin_box_click_login_button_except_error_succeed:
                 testcase_status = False
         if testcase_status:
             signin_box_check_error_succeed = Activities.signin_box_check_error(driver, error_message)
             print(f"signin_box_check_error_succeed {signin_box_check_error_succeed}")
             if not signin_box_check_error_succeed:
+                testcase_status = False
+        print(f"testcase_status {testcase_status}")
+
+    except Exception as ex:
+        print(ex)
+
+
+def test_fixed_deposit_calculator_interest_frequency_monthly(driver, investment_amount="2000000",
+                                                             investment_period="14", rate_of_return="12",
+                                                             interest_frequency="Monthly",
+                                                             tax_rate="15", total_payment="2,000,000.00",
+                                                             total_interest="8,641,939.64",
+                                                             total_corpus="10,641,939.64",
+                                                             post_tax_amount="9,293,797.05"):
+    testcase_status = True
+    try:
+        select_submenu_from_menu_succeed = Activities.select_submenu_from_menu(driver, "Personal Finance",
+                                                                               "Fixed Deposit Interest Calculator")
+        print(f"select_submenu_from_menu_succeed {select_submenu_from_menu_succeed}")
+        if not select_submenu_from_menu_succeed:
+            testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_investment_amount_succeed = Activities.fixed_deposit_calculator_enter_investment_amount(
+                driver, investment_amount)
+            print(
+                f"fixed_deposit_calculator_enter_investment_amount_succeed {fixed_deposit_calculator_enter_investment_amount_succeed}")
+            if not fixed_deposit_calculator_enter_investment_amount_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_investment_period_succeed = Activities.fixed_deposit_calculator_enter_investment_period(
+                driver, investment_period)
+            print(
+                f"fixed_deposit_calculator_enter_investment_period_succeed {fixed_deposit_calculator_enter_investment_period_succeed}")
+            if not fixed_deposit_calculator_enter_investment_period_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_rate_of_return_succeed = Activities.fixed_deposit_calculator_enter_rate_of_return(
+                driver, rate_of_return)
+            print(
+                f"fixed_deposit_calculator_enter_rate_of_return_succeed {fixed_deposit_calculator_enter_rate_of_return_succeed}")
+            if not fixed_deposit_calculator_enter_rate_of_return_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_select_interest_frequency_succeed = Activities.fixed_deposit_calculator_select_interest_frequency(
+                driver, interest_frequency)
+            print(
+                f"fixed_deposit_calculator_select_interest_frequency_succeed {fixed_deposit_calculator_select_interest_frequency_succeed}")
+            if not fixed_deposit_calculator_select_interest_frequency_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_tax_rate_succeed = Activities.fixed_deposit_calculator_enter_tax_rate(driver,
+                                                                                                                 tax_rate)
+            print(f"fixed_deposit_calculator_enter_tax_rate_succeed {fixed_deposit_calculator_enter_tax_rate_succeed}")
+            if not fixed_deposit_calculator_enter_tax_rate_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_click_submit_button_succeed = Activities.fixed_deposit_calculator_click_submit_button(
+                driver)
+            print(
+                f"fixed_deposit_calculator_click_submit_button_succeed {fixed_deposit_calculator_click_submit_button_succeed}")
+            if not fixed_deposit_calculator_click_submit_button_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_total_payment_succeed = Activities.fixed_deposit_calculator_check_total_payment(
+                driver, total_payment)
+            print(
+                f"fixed_deposit_calculator_check_total_payment_succeed {fixed_deposit_calculator_check_total_payment_succeed}")
+            if not fixed_deposit_calculator_check_total_payment_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_total_interest_succeed = Activities.fixed_deposit_calculator_check_total_interest(
+                driver, total_interest)
+            print(
+                f"fixed_deposit_calculator_check_total_interest_succeed {fixed_deposit_calculator_check_total_interest_succeed}")
+            if not fixed_deposit_calculator_check_total_interest_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_total_corpus_succeed = Activities.fixed_deposit_calculator_check_total_corpus(
+                driver, total_corpus)
+            print(
+                f"fixed_deposit_calculator_check_total_corpus_succeed {fixed_deposit_calculator_check_total_corpus_succeed}")
+            if not fixed_deposit_calculator_check_total_corpus_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_post_tax_amount_succeed = Activities.fixed_deposit_calculator_check_post_tax_amount(
+                driver, post_tax_amount)
+            print(
+                f"fixed_deposit_calculator_check_post_tax_amount_succeed {fixed_deposit_calculator_check_post_tax_amount_succeed}")
+            if not fixed_deposit_calculator_check_post_tax_amount_succeed:
+                testcase_status = False
+        print(f"testcase_status {testcase_status}")
+
+    except Exception as ex:
+        print(ex)
+
+
+def test_fixed_deposit_calculator_interest_frequency_quaterly(driver, investment_amount="2000000",
+                                                              investment_period="14", rate_of_return="12",
+                                                              interest_frequency="Quaterly",
+                                                              tax_rate="15", total_payment="2,000,000.00",
+                                                              total_interest="8,223,373.39",
+                                                              total_corpus="10,469,226.10",
+                                                              post_tax_amount="9,148,026.83"):
+    testcase_status = True
+    try:
+        select_submenu_from_menu_succeed = Activities.select_submenu_from_menu(driver, "Personal Finance",
+                                                                               "Fixed Deposit Interest Calculator")
+        print(f"select_submenu_from_menu_succeed {select_submenu_from_menu_succeed}")
+        if not select_submenu_from_menu_succeed:
+            testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_investment_amount_succeed = Activities.fixed_deposit_calculator_enter_investment_amount(
+                driver, investment_amount)
+            print(
+                f"fixed_deposit_calculator_enter_investment_amount_succeed {fixed_deposit_calculator_enter_investment_amount_succeed}")
+            if not fixed_deposit_calculator_enter_investment_amount_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_investment_period_succeed = Activities.fixed_deposit_calculator_enter_investment_period(
+                driver, investment_period)
+            print(
+                f"fixed_deposit_calculator_enter_investment_period_succeed {fixed_deposit_calculator_enter_investment_period_succeed}")
+            if not fixed_deposit_calculator_enter_investment_period_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_rate_of_return_succeed = Activities.fixed_deposit_calculator_enter_rate_of_return(
+                driver, rate_of_return)
+            print(
+                f"fixed_deposit_calculator_enter_rate_of_return_succeed {fixed_deposit_calculator_enter_rate_of_return_succeed}")
+            if not fixed_deposit_calculator_enter_rate_of_return_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_select_interest_frequency_succeed = Activities.fixed_deposit_calculator_select_interest_frequency(
+                driver, interest_frequency)
+            print(
+                f"fixed_deposit_calculator_select_interest_frequency_succeed {fixed_deposit_calculator_select_interest_frequency_succeed}")
+            if not fixed_deposit_calculator_select_interest_frequency_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_tax_rate_succeed = Activities.fixed_deposit_calculator_enter_tax_rate(driver,
+                                                                                                                 tax_rate)
+            print(f"fixed_deposit_calculator_enter_tax_rate_succeed {fixed_deposit_calculator_enter_tax_rate_succeed}")
+            if not fixed_deposit_calculator_enter_tax_rate_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_click_submit_button_succeed = Activities.fixed_deposit_calculator_click_submit_button(
+                driver)
+            print(
+                f"fixed_deposit_calculator_click_submit_button_succeed {fixed_deposit_calculator_click_submit_button_succeed}")
+            if not fixed_deposit_calculator_click_submit_button_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_total_payment_succeed = Activities.fixed_deposit_calculator_check_total_payment(
+                driver, total_payment)
+            print(
+                f"fixed_deposit_calculator_check_total_payment_succeed {fixed_deposit_calculator_check_total_payment_succeed}")
+            if not fixed_deposit_calculator_check_total_payment_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_total_interest_succeed = Activities.fixed_deposit_calculator_check_total_interest(
+                driver, total_interest)
+            print(
+                f"fixed_deposit_calculator_check_total_interest_succeed {fixed_deposit_calculator_check_total_interest_succeed}")
+            if not fixed_deposit_calculator_check_total_interest_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_total_corpus_succeed = Activities.fixed_deposit_calculator_check_total_corpus(
+                driver, total_corpus)
+            print(
+                f"fixed_deposit_calculator_check_total_corpus_succeed {fixed_deposit_calculator_check_total_corpus_succeed}")
+            if not fixed_deposit_calculator_check_total_corpus_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_post_tax_amount_succeed = Activities.fixed_deposit_calculator_check_post_tax_amount(
+                driver, post_tax_amount)
+            print(
+                f"fixed_deposit_calculator_check_post_tax_amount_succeed {fixed_deposit_calculator_check_post_tax_amount_succeed}")
+            if not fixed_deposit_calculator_check_post_tax_amount_succeed:
+                testcase_status = False
+        print(f"testcase_status {testcase_status}")
+
+    except Exception as ex:
+        print(ex)
+
+
+def test_fixed_deposit_calculator_interest_frequency_half_yearly(driver, investment_amount="2000000",
+                                                                 investment_period="14", rate_of_return="12",
+                                                                 interest_frequency="Half Yearly",
+                                                                 tax_rate="15", total_payment="2,000,000.00",
+                                                                 total_interest="8,223,373.39",
+                                                                 total_corpus="10,223,373.39",
+                                                                 post_tax_amount="8,940,527.14"):
+    testcase_status = True
+    try:
+        select_submenu_from_menu_succeed = Activities.select_submenu_from_menu(driver, "Personal Finance",
+                                                                               "Fixed Deposit Interest Calculator")
+        print(f"select_submenu_from_menu_succeed {select_submenu_from_menu_succeed}")
+        if not select_submenu_from_menu_succeed:
+            testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_investment_amount_succeed = Activities.fixed_deposit_calculator_enter_investment_amount(
+                driver, investment_amount)
+            print(
+                f"fixed_deposit_calculator_enter_investment_amount_succeed {fixed_deposit_calculator_enter_investment_amount_succeed}")
+            if not fixed_deposit_calculator_enter_investment_amount_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_investment_period_succeed = Activities.fixed_deposit_calculator_enter_investment_period(
+                driver, investment_period)
+            print(
+                f"fixed_deposit_calculator_enter_investment_period_succeed {fixed_deposit_calculator_enter_investment_period_succeed}")
+            if not fixed_deposit_calculator_enter_investment_period_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_rate_of_return_succeed = Activities.fixed_deposit_calculator_enter_rate_of_return(
+                driver, rate_of_return)
+            print(
+                f"fixed_deposit_calculator_enter_rate_of_return_succeed {fixed_deposit_calculator_enter_rate_of_return_succeed}")
+            if not fixed_deposit_calculator_enter_rate_of_return_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_select_interest_frequency_succeed = Activities.fixed_deposit_calculator_select_interest_frequency(
+                driver, interest_frequency)
+            print(
+                f"fixed_deposit_calculator_select_interest_frequency_succeed {fixed_deposit_calculator_select_interest_frequency_succeed}")
+            if not fixed_deposit_calculator_select_interest_frequency_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_tax_rate_succeed = Activities.fixed_deposit_calculator_enter_tax_rate(driver,
+                                                                                                                 tax_rate)
+            print(f"fixed_deposit_calculator_enter_tax_rate_succeed {fixed_deposit_calculator_enter_tax_rate_succeed}")
+            if not fixed_deposit_calculator_enter_tax_rate_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_click_submit_button_succeed = Activities.fixed_deposit_calculator_click_submit_button(
+                driver)
+            print(
+                f"fixed_deposit_calculator_click_submit_button_succeed {fixed_deposit_calculator_click_submit_button_succeed}")
+            if not fixed_deposit_calculator_click_submit_button_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_total_payment_succeed = Activities.fixed_deposit_calculator_check_total_payment(
+                driver, total_payment)
+            print(
+                f"fixed_deposit_calculator_check_total_payment_succeed {fixed_deposit_calculator_check_total_payment_succeed}")
+            if not fixed_deposit_calculator_check_total_payment_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_total_interest_succeed = Activities.fixed_deposit_calculator_check_total_interest(
+                driver, total_interest)
+            print(
+                f"fixed_deposit_calculator_check_total_interest_succeed {fixed_deposit_calculator_check_total_interest_succeed}")
+            if not fixed_deposit_calculator_check_total_interest_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_total_corpus_succeed = Activities.fixed_deposit_calculator_check_total_corpus(
+                driver, total_corpus)
+            print(
+                f"fixed_deposit_calculator_check_total_corpus_succeed {fixed_deposit_calculator_check_total_corpus_succeed}")
+            if not fixed_deposit_calculator_check_total_corpus_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_post_tax_amount_succeed = Activities.fixed_deposit_calculator_check_post_tax_amount(
+                driver, post_tax_amount)
+            print(
+                f"fixed_deposit_calculator_check_post_tax_amount_succeed {fixed_deposit_calculator_check_post_tax_amount_succeed}")
+            if not fixed_deposit_calculator_check_post_tax_amount_succeed:
+                testcase_status = False
+        print(f"testcase_status {testcase_status}")
+
+    except Exception as ex:
+        print(ex)
+
+
+def test_fixed_deposit_calculator_interest_frequency_yearly(driver, investment_amount="2000000",
+                                                            investment_period="14", rate_of_return="12",
+                                                            interest_frequency="Yearly",
+                                                            tax_rate="15", total_payment="2,000,000.00",
+                                                            total_interest="7,774,224.57",
+                                                            total_corpus="9,774,224.57",
+                                                            post_tax_amount="8,561,445.54"):
+    testcase_status = True
+    try:
+        select_submenu_from_menu_succeed = Activities.select_submenu_from_menu(driver, "Personal Finance",
+                                                                               "Fixed Deposit Interest Calculator")
+        print(f"select_submenu_from_menu_succeed {select_submenu_from_menu_succeed}")
+        if not select_submenu_from_menu_succeed:
+            testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_investment_amount_succeed = Activities.fixed_deposit_calculator_enter_investment_amount(
+                driver, investment_amount)
+            print(
+                f"fixed_deposit_calculator_enter_investment_amount_succeed {fixed_deposit_calculator_enter_investment_amount_succeed}")
+            if not fixed_deposit_calculator_enter_investment_amount_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_investment_period_succeed = Activities.fixed_deposit_calculator_enter_investment_period(
+                driver, investment_period)
+            print(
+                f"fixed_deposit_calculator_enter_investment_period_succeed {fixed_deposit_calculator_enter_investment_period_succeed}")
+            if not fixed_deposit_calculator_enter_investment_period_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_rate_of_return_succeed = Activities.fixed_deposit_calculator_enter_rate_of_return(
+                driver, rate_of_return)
+            print(
+                f"fixed_deposit_calculator_enter_rate_of_return_succeed {fixed_deposit_calculator_enter_rate_of_return_succeed}")
+            if not fixed_deposit_calculator_enter_rate_of_return_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_select_interest_frequency_succeed = Activities.fixed_deposit_calculator_select_interest_frequency(
+                driver, interest_frequency)
+            print(
+                f"fixed_deposit_calculator_select_interest_frequency_succeed {fixed_deposit_calculator_select_interest_frequency_succeed}")
+            if not fixed_deposit_calculator_select_interest_frequency_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_tax_rate_succeed = Activities.fixed_deposit_calculator_enter_tax_rate(driver,
+                                                                                                                 tax_rate)
+            print(f"fixed_deposit_calculator_enter_tax_rate_succeed {fixed_deposit_calculator_enter_tax_rate_succeed}")
+            if not fixed_deposit_calculator_enter_tax_rate_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_click_submit_button_succeed = Activities.fixed_deposit_calculator_click_submit_button(
+                driver)
+            print(
+                f"fixed_deposit_calculator_click_submit_button_succeed {fixed_deposit_calculator_click_submit_button_succeed}")
+            if not fixed_deposit_calculator_click_submit_button_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_total_payment_succeed = Activities.fixed_deposit_calculator_check_total_payment(
+                driver, total_payment)
+            print(
+                f"fixed_deposit_calculator_check_total_payment_succeed {fixed_deposit_calculator_check_total_payment_succeed}")
+            if not fixed_deposit_calculator_check_total_payment_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_total_interest_succeed = Activities.fixed_deposit_calculator_check_total_interest(
+                driver, total_interest)
+            print(
+                f"fixed_deposit_calculator_check_total_interest_succeed {fixed_deposit_calculator_check_total_interest_succeed}")
+            if not fixed_deposit_calculator_check_total_interest_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_total_corpus_succeed = Activities.fixed_deposit_calculator_check_total_corpus(
+                driver, total_corpus)
+            print(
+                f"fixed_deposit_calculator_check_total_corpus_succeed {fixed_deposit_calculator_check_total_corpus_succeed}")
+            if not fixed_deposit_calculator_check_total_corpus_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_post_tax_amount_succeed = Activities.fixed_deposit_calculator_check_post_tax_amount(
+                driver, post_tax_amount)
+            print(
+                f"fixed_deposit_calculator_check_post_tax_amount_succeed {fixed_deposit_calculator_check_post_tax_amount_succeed}")
+            if not fixed_deposit_calculator_check_post_tax_amount_succeed:
+                testcase_status = False
+        print(f"testcase_status {testcase_status}")
+
+    except Exception as ex:
+        print(ex)
+
+
+def test_fixed_deposit_calculator_reset(driver, investment_amount="2000000",
+                                        investment_period="14", rate_of_return="12",
+                                        interest_frequency="Yearly",
+                                        tax_rate="15",
+                                        default_investment_amount="10000000",
+                                        default_investment_period="10",
+                                        default_rate_of_return="10",
+                                        ):
+    testcase_status = True
+    try:
+        select_submenu_from_menu_succeed = Activities.select_submenu_from_menu(driver, "Personal Finance",
+                                                                               "Fixed Deposit Interest Calculator")
+        print(f"select_submenu_from_menu_succeed {select_submenu_from_menu_succeed}")
+        if not select_submenu_from_menu_succeed:
+            testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_investment_amount_succeed = Activities.fixed_deposit_calculator_enter_investment_amount(
+                driver, investment_amount)
+            print(
+                f"fixed_deposit_calculator_enter_investment_amount_succeed {fixed_deposit_calculator_enter_investment_amount_succeed}")
+            if not fixed_deposit_calculator_enter_investment_amount_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_investment_period_succeed = Activities.fixed_deposit_calculator_enter_investment_period(
+                driver, investment_period)
+            print(
+                f"fixed_deposit_calculator_enter_investment_period_succeed {fixed_deposit_calculator_enter_investment_period_succeed}")
+            if not fixed_deposit_calculator_enter_investment_period_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_rate_of_return_succeed = Activities.fixed_deposit_calculator_enter_rate_of_return(
+                driver, rate_of_return)
+            print(
+                f"fixed_deposit_calculator_enter_rate_of_return_succeed {fixed_deposit_calculator_enter_rate_of_return_succeed}")
+            if not fixed_deposit_calculator_enter_rate_of_return_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_select_interest_frequency_succeed = Activities.fixed_deposit_calculator_select_interest_frequency(
+                driver, interest_frequency)
+            print(
+                f"fixed_deposit_calculator_select_interest_frequency_succeed {fixed_deposit_calculator_select_interest_frequency_succeed}")
+            if not fixed_deposit_calculator_select_interest_frequency_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_enter_tax_rate_succeed = Activities.fixed_deposit_calculator_enter_tax_rate(driver,
+                                                                                                                 tax_rate)
+            print(f"fixed_deposit_calculator_enter_tax_rate_succeed {fixed_deposit_calculator_enter_tax_rate_succeed}")
+            if not fixed_deposit_calculator_enter_tax_rate_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_click_reset_button_succeed = Activities.fixed_deposit_calculator_click_reset_button(
+                driver)
+            print(
+                f"fixed_deposit_calculator_click_reset_button_succeed {fixed_deposit_calculator_click_reset_button_succeed}")
+            if not fixed_deposit_calculator_click_reset_button_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_investment_amount_succeed = Activities.fixed_deposit_calculator_check_investment_amount(
+                driver, default_investment_amount)
+            print(
+                f"fixed_deposit_calculator_check_investment_amount_succeed {fixed_deposit_calculator_check_investment_amount_succeed}")
+            if not fixed_deposit_calculator_check_investment_amount_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_investment_period_succeed = Activities.fixed_deposit_calculator_check_investment_period(
+                driver, default_investment_period)
+            print(
+                f"fixed_deposit_calculator_check_investment_period_succeed {fixed_deposit_calculator_check_investment_period_succeed}")
+            if not fixed_deposit_calculator_check_investment_period_succeed:
+                testcase_status = False
+        if testcase_status:
+            fixed_deposit_calculator_check_rate_of_return_succeed = Activities.fixed_deposit_calculator_check_rate_of_return(
+                driver, default_rate_of_return)
+            print(
+                f"fixed_deposit_calculator_check_rate_of_return_succeed {fixed_deposit_calculator_check_rate_of_return_succeed}")
+            if not fixed_deposit_calculator_check_rate_of_return_succeed:
                 testcase_status = False
         print(f"testcase_status {testcase_status}")
 
