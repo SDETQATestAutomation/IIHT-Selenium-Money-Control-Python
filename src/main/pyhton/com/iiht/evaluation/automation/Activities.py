@@ -155,6 +155,7 @@ class Activities:
                                                                                 "signin_box_error_div"])
         if signin_box_error_div_element is None:
             return False
+        time.sleep(5)
         signin_box_error_div_element_text = signin_box_error_div_element.text
         print(f"signin_box_error_div_element_text {signin_box_error_div_element_text}")
         if signin_box_error_div_element_text == error_message:

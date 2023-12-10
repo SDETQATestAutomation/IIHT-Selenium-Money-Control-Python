@@ -103,4 +103,39 @@ def test_success_login(driver, email="prashant.ranjan.qa@gmail.com", password="i
         print(ex)
 
 
+def test_failure_login(driver, email="prashant.ranjan.qa@gmail.commmmm", password="igetup@7AMmmmmmm",error_message="Invalid User Id/EmailID or Password. Please try again."):
+    testcase_status = True
+    try:
+        open_login_panel_succeed = Activities.open_login_panel(driver)
+        print(f"open_login_panel_succeed {open_login_panel_succeed}")
+        if not open_login_panel_succeed:
+            testcase_status = False
+        if testcase_status:
+            open_signin_box_succeed = Activities.open_signin_box(driver)
+            print(f"open_signin_box_succeed {open_signin_box_succeed}")
+            if not open_signin_box_succeed:
+                testcase_status = False
+        if testcase_status:
+            signin_box_enter_email_succeed = Activities.signin_box_enter_email(driver, email)
+            print(f"signin_box_enter_email_succeed {signin_box_enter_email_succeed}")
+            if not signin_box_enter_email_succeed:
+                testcase_status = False
+        if testcase_status:
+            signin_box_enter_password_succeed = Activities.signin_box_enter_password(driver, password)
+            print(f"signin_box_enter_password_succeed {signin_box_enter_password_succeed}")
+            if not signin_box_enter_password_succeed:
+                testcase_status = False
+        if testcase_status:
+            signin_box_click_login_button_except_error_succeed = Activities.signin_box_click_login_button_except_error(driver)
+            print(f"signin_box_click_login_button_except_error_succeed {signin_box_click_login_button_except_error_succeed}")
+            if not signin_box_click_login_button_except_error_succeed:
+                testcase_status = False
+        if testcase_status:
+            signin_box_check_error_succeed = Activities.signin_box_check_error(driver, error_message)
+            print(f"signin_box_check_error_succeed {signin_box_check_error_succeed}")
+            if not signin_box_check_error_succeed:
+                testcase_status = False
+        print(f"testcase_status {testcase_status}")
 
+    except Exception as ex:
+        print(ex)
