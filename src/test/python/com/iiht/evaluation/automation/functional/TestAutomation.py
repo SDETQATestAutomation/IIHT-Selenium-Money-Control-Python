@@ -581,3 +581,272 @@ def test_fixed_deposit_calculator_reset(driver, investment_amount="2000000",
 
     except Exception as ex:
         print(ex)
+
+
+def test_emergency_fund_calculator(driver, medical_dental_cost="2000000",
+                                   vehicle_repair="100000",
+                                   others="50000",
+                                   life_health_insurance_premium="250000",
+                                   home_auto_insurance_premium="300000",
+                                   home_loan_other_important_emis="50000",
+                                   monthly_living_expenses="75000",
+                                   month_unemployed="5",
+                                   uninsured_unexpected_emergencies_total="21,50,000",
+                                   annual_amount_of_fixed_payments_total="6,00,000",
+                                   build_reserve_to_pay_for_job_loss="3,75,000",
+                                   final_result="31,25,000"):
+    testcase_status = True
+    try:
+        select_submenu_from_menu_succeed = Activities.select_submenu_from_menu(driver, "Personal Finance",
+                                                                               "Emergency Fund Calculator")
+        print(f"select_submenu_from_menu_succeed {select_submenu_from_menu_succeed}")
+        if not select_submenu_from_menu_succeed:
+            testcase_status = False
+        if testcase_status:
+            emergency_fund_calculator_enter_medical_dental_cost_succeed = Activities.emergency_fund_calculator_enter_medical_dental_cost(
+                driver, medical_dental_cost)
+            print(
+                f"emergency_fund_calculator_enter_medical_dental_cost_succeed {emergency_fund_calculator_enter_medical_dental_cost_succeed}")
+            if not emergency_fund_calculator_enter_medical_dental_cost_succeed:
+                testcase_status = False
+        if testcase_status:
+            emergency_fund_calculator_enter_vehicle_repair_succeed = Activities.emergency_fund_calculator_enter_vehicle_repair(
+                driver, vehicle_repair)
+            print(
+                f"emergency_fund_calculator_enter_vehicle_repair_succeed {emergency_fund_calculator_enter_vehicle_repair_succeed}")
+            if not emergency_fund_calculator_enter_vehicle_repair_succeed:
+                testcase_status = False
+        if testcase_status:
+            emergency_fund_calculator_enter_others_succeed = Activities.emergency_fund_calculator_enter_others(
+                driver, others)
+            print(
+                f"emergency_fund_calculator_enter_others_succeed {emergency_fund_calculator_enter_others_succeed}")
+            if not emergency_fund_calculator_enter_others_succeed:
+                testcase_status = False
+        if testcase_status:
+            emergency_fund_calculator_enter_life_health_insurance_premium_succeed = Activities.emergency_fund_calculator_enter_life_health_insurance_premium(
+                driver, life_health_insurance_premium)
+            print(
+                f"emergency_fund_calculator_enter_life_health_insurance_premium_succeed {emergency_fund_calculator_enter_life_health_insurance_premium_succeed}")
+            if not emergency_fund_calculator_enter_life_health_insurance_premium_succeed:
+                testcase_status = False
+        if testcase_status:
+            emergency_fund_calculator_enter_home_auto_insurance_premium_succeed = Activities.emergency_fund_calculator_enter_home_auto_insurance_premium(
+                driver,
+                home_auto_insurance_premium)
+            print(
+                f"emergency_fund_calculator_enter_home_auto_insurance_premium_succeed {emergency_fund_calculator_enter_home_auto_insurance_premium_succeed}")
+            if not emergency_fund_calculator_enter_home_auto_insurance_premium_succeed:
+                testcase_status = False
+        if testcase_status:
+            emergency_fund_calculator_enter_home_loan_other_important_emis_succeed = Activities.emergency_fund_calculator_enter_home_loan_other_important_emis(
+                driver,
+                home_loan_other_important_emis)
+            print(
+                f"emergency_fund_calculator_enter_home_loan_other_important_emis_succeed {emergency_fund_calculator_enter_home_loan_other_important_emis_succeed}")
+            if not emergency_fund_calculator_enter_home_loan_other_important_emis_succeed:
+                testcase_status = False
+        if testcase_status:
+            emergency_fund_calculator_enter_monthly_living_expenses_succeed = Activities.emergency_fund_calculator_enter_monthly_living_expenses(
+                driver,
+                monthly_living_expenses)
+            print(
+                f"emergency_fund_calculator_enter_monthly_living_expenses_succeed {emergency_fund_calculator_enter_monthly_living_expenses_succeed}")
+            if not emergency_fund_calculator_enter_monthly_living_expenses_succeed:
+                testcase_status = False
+        if testcase_status:
+            emergency_fund_calculator_enter_month_unemployed_succeed = Activities.emergency_fund_calculator_enter_month_unemployed(
+                driver,
+                month_unemployed)
+            print(
+                f"emergency_fund_calculator_enter_month_unemployed_succeed {emergency_fund_calculator_enter_month_unemployed_succeed}")
+            if not emergency_fund_calculator_enter_month_unemployed_succeed:
+                testcase_status = False
+        if testcase_status:
+            emergency_fund_calculator_click_calculate_button_succeed = Activities.emergency_fund_calculator_click_calculate_button(
+                driver)
+            print(
+                f"emergency_fund_calculator_click_calculate_button_succeed {emergency_fund_calculator_click_calculate_button_succeed}")
+            if not emergency_fund_calculator_click_calculate_button_succeed:
+                testcase_status = False
+        if testcase_status:
+            emergency_fund_calculator_check_uninsured_unexpected_emergencies_total_succeed = Activities.emergency_fund_calculator_check_uninsured_unexpected_emergencies_total(
+                driver, uninsured_unexpected_emergencies_total)
+            print(
+                f"emergency_fund_calculator_check_uninsured_unexpected_emergencies_total_succeed {emergency_fund_calculator_check_uninsured_unexpected_emergencies_total_succeed}")
+            if not emergency_fund_calculator_check_uninsured_unexpected_emergencies_total_succeed:
+                testcase_status = False
+        if testcase_status:
+            emergency_fund_calculator_check_annual_amount_of_fixed_payments_total_succeed = Activities.emergency_fund_calculator_check_annual_amount_of_fixed_payments_total(
+                driver, annual_amount_of_fixed_payments_total)
+            print(
+                f"emergency_fund_calculator_check_annual_amount_of_fixed_payments_total_succeed {emergency_fund_calculator_check_annual_amount_of_fixed_payments_total_succeed}")
+            if not emergency_fund_calculator_check_annual_amount_of_fixed_payments_total_succeed:
+                testcase_status = False
+        if testcase_status:
+            emergency_fund_calculator_check_build_reserve_to_pay_for_job_loss_succeed = Activities.emergency_fund_calculator_check_build_reserve_to_pay_for_job_loss(
+                driver, build_reserve_to_pay_for_job_loss)
+            print(
+                f"emergency_fund_calculator_check_build_reserve_to_pay_for_job_loss_succeed {emergency_fund_calculator_check_build_reserve_to_pay_for_job_loss_succeed}")
+            if not emergency_fund_calculator_check_build_reserve_to_pay_for_job_loss_succeed:
+                testcase_status = False
+        if testcase_status:
+            emergency_fund_calculator_check_result_succeed = Activities.emergency_fund_calculator_check_result(
+                driver, final_result)
+            print(
+                f"emergency_fund_calculator_check_result_succeed {emergency_fund_calculator_check_result_succeed}")
+            if not emergency_fund_calculator_check_result_succeed:
+                testcase_status = False
+        print(f"testcase_status {testcase_status}")
+
+    except Exception as ex:
+        print(ex)
+
+
+def test_provident_fund_calculator(driver, your_age="50",
+                                   your_basic_salary_monthly="75000",
+                                   your_contribution_to_epf="10",
+                                   your_employer_contribution_to_epf="12",
+                                   average_annual_increase_in_salary_you_expect="12",
+                                   age_when_you_intend_to_retire="60",
+                                   current_epf_balance_if_any="5000000",
+                                   current_interest_rate="9",
+                                   final_result="1,62,14,311"):
+    testcase_status = True
+    try:
+        select_submenu_from_menu_succeed = Activities.select_submenu_from_menu(driver, "Personal Finance",
+                                                                               "Provident Fund Calculator")
+        print(f"select_submenu_from_menu_succeed {select_submenu_from_menu_succeed}")
+        if not select_submenu_from_menu_succeed:
+            testcase_status = False
+        if testcase_status:
+            provident_fund_calculator_enter_your_age_succeed = Activities.provident_fund_calculator_enter_your_age(
+                driver, your_age)
+            print(
+                f"provident_fund_calculator_enter_your_age_succeed {provident_fund_calculator_enter_your_age_succeed}")
+            if not provident_fund_calculator_enter_your_age_succeed:
+                testcase_status = False
+        if testcase_status:
+            provident_fund_calculator_enter_your_basic_salary_monthly_succeed = Activities.provident_fund_calculator_enter_your_basic_salary_monthly(
+                driver, your_basic_salary_monthly)
+            print(
+                f"provident_fund_calculator_enter_your_basic_salary_monthly_succeed {provident_fund_calculator_enter_your_basic_salary_monthly_succeed}")
+            if not provident_fund_calculator_enter_your_basic_salary_monthly_succeed:
+                testcase_status = False
+        if testcase_status:
+            provident_fund_calculator_enter_your_contribution_to_epf_succeed = Activities.provident_fund_calculator_enter_your_contribution_to_epf(
+                driver, your_contribution_to_epf)
+            print(
+                f"provident_fund_calculator_enter_your_contribution_to_epf_succeed {provident_fund_calculator_enter_your_contribution_to_epf_succeed}")
+            if not provident_fund_calculator_enter_your_contribution_to_epf_succeed:
+                testcase_status = False
+        if testcase_status:
+            provident_fund_calculator_enter_your_employer_contribution_to_epf_succeed = Activities.provident_fund_calculator_enter_your_employer_contribution_to_epf(
+                driver, your_employer_contribution_to_epf)
+            print(
+                f"provident_fund_calculator_enter_your_employer_contribution_to_epf_succeed {provident_fund_calculator_enter_your_employer_contribution_to_epf_succeed}")
+            if not provident_fund_calculator_enter_your_employer_contribution_to_epf_succeed:
+                testcase_status = False
+        if testcase_status:
+            provident_fund_calculator_enter_average_annual_increase_in_salary_you_expect_succeed = Activities.provident_fund_calculator_enter_average_annual_increase_in_salary_you_expect(
+                driver,
+                average_annual_increase_in_salary_you_expect)
+            print(
+                f"provident_fund_calculator_enter_average_annual_increase_in_salary_you_expect_succeed {provident_fund_calculator_enter_average_annual_increase_in_salary_you_expect_succeed}")
+            if not provident_fund_calculator_enter_average_annual_increase_in_salary_you_expect_succeed:
+                testcase_status = False
+        if testcase_status:
+            provident_fund_calculator_enter_age_when_you_intend_to_retire_succeed = Activities.provident_fund_calculator_enter_age_when_you_intend_to_retire(
+                driver,
+                age_when_you_intend_to_retire)
+            print(
+                f"provident_fund_calculator_enter_age_when_you_intend_to_retire_succeed {provident_fund_calculator_enter_age_when_you_intend_to_retire_succeed}")
+            if not provident_fund_calculator_enter_age_when_you_intend_to_retire_succeed:
+                testcase_status = False
+        if testcase_status:
+            provident_fund_calculator_enter_current_epf_balance_if_any_succeed = Activities.provident_fund_calculator_enter_current_epf_balance_if_any(
+                driver,
+                current_epf_balance_if_any)
+            print(
+                f"provident_fund_calculator_enter_current_epf_balance_if_any_succeed {provident_fund_calculator_enter_current_epf_balance_if_any_succeed}")
+            if not provident_fund_calculator_enter_current_epf_balance_if_any_succeed:
+                testcase_status = False
+        if testcase_status:
+            provident_fund_calculator_enter_current_interest_rate_succeed = Activities.provident_fund_calculator_enter_current_interest_rate(
+                driver,
+                current_interest_rate)
+            print(
+                f"provident_fund_calculator_enter_current_interest_rate_succeed {provident_fund_calculator_enter_current_interest_rate_succeed}")
+            if not provident_fund_calculator_enter_current_interest_rate_succeed:
+                testcase_status = False
+        if testcase_status:
+            provident_fund_calculator_click_submit_button_succeed = Activities.provident_fund_calculator_click_submit_button(
+                driver)
+            print(
+                f"provident_fund_calculator_click_submit_button_succeed {provident_fund_calculator_click_submit_button_succeed}")
+            if not provident_fund_calculator_click_submit_button_succeed:
+                testcase_status = False
+        if testcase_status:
+            provident_fund_calculator_check_result_succeed = Activities.provident_fund_calculator_check_result(
+                driver, final_result)
+            print(
+                f"provident_fund_calculator_check_result_succeed {provident_fund_calculator_check_result_succeed}")
+            if not provident_fund_calculator_check_result_succeed:
+                testcase_status = False
+        print(f"testcase_status {testcase_status}")
+
+    except Exception as ex:
+        print(ex)
+
+
+def test_debt_reduction_plan_calculator(driver,
+                                        total_debt_outstanding="1500000",
+                                        rate_of_interest_per_annum="15",
+                                        how_much_can_you_repay_every_month="50000",
+                                        final_result="15,00,000"):
+    testcase_status = True
+    try:
+        select_submenu_from_menu_succeed = Activities.select_submenu_from_menu(driver, "Personal Finance",
+                                                                               "Debt Reduction Planner")
+        print(f"select_submenu_from_menu_succeed {select_submenu_from_menu_succeed}")
+        if not select_submenu_from_menu_succeed:
+            testcase_status = False
+        if testcase_status:
+            debt_reduction_plan_calculator_enter_total_debt_outstanding_succeed = Activities.debt_reduction_plan_calculator_enter_total_debt_outstanding(
+                driver, total_debt_outstanding)
+            print(
+                f"debt_reduction_plan_calculator_enter_total_debt_outstanding_succeed {debt_reduction_plan_calculator_enter_total_debt_outstanding_succeed}")
+            if not debt_reduction_plan_calculator_enter_total_debt_outstanding_succeed:
+                testcase_status = False
+        if testcase_status:
+            debt_reduction_plan_calculator_enter_rate_of_interest_per_annum_succeed = Activities.debt_reduction_plan_calculator_enter_rate_of_interest_per_annum(
+                driver, rate_of_interest_per_annum)
+            print(
+                f"debt_reduction_plan_calculator_enter_rate_of_interest_per_annum_succeed {debt_reduction_plan_calculator_enter_rate_of_interest_per_annum_succeed}")
+            if not debt_reduction_plan_calculator_enter_rate_of_interest_per_annum_succeed:
+                testcase_status = False
+        if testcase_status:
+            debt_reduction_plan_calculator_enter_how_much_can_you_repay_every_month_succeed = Activities.debt_reduction_plan_calculator_enter_how_much_can_you_repay_every_month(
+                driver, how_much_can_you_repay_every_month)
+            print(
+                f"debt_reduction_plan_calculator_enter_how_much_can_you_repay_every_month_succeed {debt_reduction_plan_calculator_enter_how_much_can_you_repay_every_month_succeed}")
+            if not debt_reduction_plan_calculator_enter_how_much_can_you_repay_every_month_succeed:
+                testcase_status = False
+        if testcase_status:
+            debt_reduction_plan_calculator_click_calculate_button_succeed = Activities.debt_reduction_plan_calculator_click_calculate_button(
+                driver)
+            print(
+                f"debt_reduction_plan_calculator_click_calculate_button_succeed {debt_reduction_plan_calculator_click_calculate_button_succeed}")
+            if not debt_reduction_plan_calculator_click_calculate_button_succeed:
+                testcase_status = False
+        if testcase_status:
+            debt_reduction_plan_calculator_check_result_succeed = Activities.debt_reduction_plan_calculator_check_result(
+                driver, final_result)
+            print(
+                f"debt_reduction_plan_calculator_check_result_succeed {debt_reduction_plan_calculator_check_result_succeed}")
+            if not debt_reduction_plan_calculator_check_result_succeed:
+                testcase_status = False
+        print(f"testcase_status {testcase_status}")
+
+    except Exception as ex:
+        print(ex)
