@@ -1,7 +1,7 @@
 money_control_element = {
     "login_link": "//a[contains(@title,'Login') and @class='userlink']",
     "login_signup_box": "//div[@class='log_signupbox']",
-    "signup_box_login_link": "//div[@id='mc_mainWrapper']/descendant::a[text()='Log-in']",
+    "signup_box_login_link": "(//div[@class='log_signupbox']/descendant::a[contains(@class,'linkSignIn')])[1]",
     "login_signin_iframe": "//iframe[@id='myframe']",
     "login_signin_box": "//div[@id='mc_login']",
     "signin_box_email_field": "//div[@id='mc_login']/descendant::input[@name='email']",

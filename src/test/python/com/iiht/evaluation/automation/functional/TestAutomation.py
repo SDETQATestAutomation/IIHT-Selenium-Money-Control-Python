@@ -144,10 +144,13 @@ def test_failure_login(driver, email="prashant.ranjan.qa@gmail.commmmm", passwor
         print(ex)
 
 
-def test_fixed_deposit_calculator_interest_frequency_monthly(driver, investment_amount="2000000",
-                                                             investment_period="14", rate_of_return="12",
+def test_fixed_deposit_calculator_interest_frequency_monthly(driver,
+                                                             investment_amount="2000000",
+                                                             investment_period="14",
+                                                             rate_of_return="12",
                                                              interest_frequency="Monthly",
-                                                             tax_rate="15", total_payment="2,000,000.00",
+                                                             tax_rate="15",
+                                                             total_payment="2,000,000.00",
                                                              total_interest="8,641,939.64",
                                                              total_corpus="10,641,939.64",
                                                              post_tax_amount="9,293,797.05"):
@@ -233,8 +236,10 @@ def test_fixed_deposit_calculator_interest_frequency_monthly(driver, investment_
         print(ex)
 
 
-def test_fixed_deposit_calculator_interest_frequency_quaterly(driver, investment_amount="2000000",
-                                                              investment_period="14", rate_of_return="12",
+def test_fixed_deposit_calculator_interest_frequency_quaterly(driver,
+                                                              investment_amount="2000000",
+                                                              investment_period="14",
+                                                              rate_of_return="12",
                                                               interest_frequency="Quaterly",
                                                               tax_rate="15", total_payment="2,000,000.00",
                                                               total_interest="8,223,373.39",
@@ -322,10 +327,13 @@ def test_fixed_deposit_calculator_interest_frequency_quaterly(driver, investment
         print(ex)
 
 
-def test_fixed_deposit_calculator_interest_frequency_half_yearly(driver, investment_amount="2000000",
-                                                                 investment_period="14", rate_of_return="12",
+def test_fixed_deposit_calculator_interest_frequency_half_yearly(driver,
+                                                                 investment_amount="2000000",
+                                                                 investment_period="14",
+                                                                 rate_of_return="12",
                                                                  interest_frequency="Half Yearly",
-                                                                 tax_rate="15", total_payment="2,000,000.00",
+                                                                 tax_rate="15",
+                                                                 total_payment="2,000,000.00",
                                                                  total_interest="8,223,373.39",
                                                                  total_corpus="10,223,373.39",
                                                                  post_tax_amount="8,940,527.14"):
@@ -411,10 +419,13 @@ def test_fixed_deposit_calculator_interest_frequency_half_yearly(driver, investm
         print(ex)
 
 
-def test_fixed_deposit_calculator_interest_frequency_yearly(driver, investment_amount="2000000",
-                                                            investment_period="14", rate_of_return="12",
+def test_fixed_deposit_calculator_interest_frequency_yearly(driver,
+                                                            investment_amount="2000000",
+                                                            investment_period="14",
+                                                            rate_of_return="12",
                                                             interest_frequency="Yearly",
-                                                            tax_rate="15", total_payment="2,000,000.00",
+                                                            tax_rate="15",
+                                                            total_payment="2,000,000.00",
                                                             total_interest="7,774,224.57",
                                                             total_corpus="9,774,224.57",
                                                             post_tax_amount="8,561,445.54"):
@@ -500,8 +511,10 @@ def test_fixed_deposit_calculator_interest_frequency_yearly(driver, investment_a
         print(ex)
 
 
-def test_fixed_deposit_calculator_reset(driver, investment_amount="2000000",
-                                        investment_period="14", rate_of_return="12",
+def test_fixed_deposit_calculator_reset(driver,
+                                        investment_amount="2000000",
+                                        investment_period="14",
+                                        rate_of_return="12",
                                         interest_frequency="Yearly",
                                         tax_rate="15",
                                         default_investment_amount="10000000",
