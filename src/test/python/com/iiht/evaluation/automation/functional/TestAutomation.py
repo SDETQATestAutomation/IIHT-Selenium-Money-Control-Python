@@ -46,7 +46,7 @@ def driver(request):
     options.add_argument("--lang=en")
     options.add_argument("--no-sandbox")
     options.add_argument("disable-popup-blocking")
-    options.add_experimental_option("debuggerAddress", "127.0.0.1:9223")
+    # options.add_experimental_option("debuggerAddress", "127.0.0.1:9223")
 
     options.set_capability("goog:loggingPrefs", {'driver': 'INFO', 'server': 'OFF', 'browser': 'INFO'})
     options.set_capability("elementScrollBehavior", 1)
@@ -55,7 +55,8 @@ def driver(request):
     service = Service(req_chrome_driver_path)
     driver = webdriver.Chrome(service=service, options=options)
     driver.implicitly_wait(15)
-    # driver.get(base_url)
+    driver.get(base_url)
+    driver.find_element(By.XPATH, "//img[@title='Moneycontrol']").click()
     SubActivities.check_page_load_complete(driver)
     try:
         print("\nAfter method setup")
